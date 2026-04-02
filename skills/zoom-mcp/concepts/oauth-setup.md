@@ -2,35 +2,108 @@
 
 ## Overview
 
-The primary documented path for Zoom MCP is **user OAuth**. Each user authorizes with their
-own Zoom account, and the resulting bearer token is passed by the bundled connector in
-[`.mcp.json`](../../../.mcp.json).
+The primary documented path for Zoom MCP is a **General app** using **user-level OAuth**.
+Each user authorizes with their own Zoom account, and the resulting bearer token is passed by
+the bundled connector in [`.mcp.json`](../../../.mcp.json).
 
 A **Server-to-Server OAuth** token can initialize against the MCP gateway and complete
 `tools/list`. That means S2S is not outright blocked at the transport layer. Do not assume
 tool parity, though: actual execution is still scope-gated and must be verified per token
 type and MCP server.
 
-## Step 1: Create a User OAuth App
+## Step 1: Create a General App with User-Level OAuth
 
 1. Go to [marketplace.zoom.us](https://marketplace.zoom.us) → **Develop** → **Build App**.
-2. Select **OAuth** for the per-user MCP path.
-3. Set a redirect URL for your client or local test environment.
-4. Note the client ID and client secret.
+2. Create a **General app**.
+3. Configure the app for **user-level OAuth** for the per-user MCP path.
+4. Set a redirect URL for your client or local test environment.
+5. Note the client ID and client secret.
+
+### If You Do Not Already Have a Redirect Endpoint
+
+For development, two pragmatic options are:
+
+**Option 0: `localhost` and manually copy the code**
+
+Example:
+
+```text
+http://localhost:3000/oauth/zoom/callback
+```
+
+If the local app does not actually handle the callback yet, the browser may show a failed page
+load. You can still copy the `code` and `state` values from the browser URL and paste them into
+Claude or your terminal flow so the token exchange can continue manually.
+
+Pros:
+- no tunnel and no third-party capture service
+- fastest setup if you only need the authorization code once
+- keeps the authorization code on your machine
+
+Cons:
+- manual copy/paste step every time
+- no automatic code exchange or refresh flow
+- less convenient if you repeat the auth flow often
+
+**Option 1: `ngrok` in front of a local callback server**
+
+Example:
+
+```text
+Local app: http://localhost:3000/oauth/zoom/callback
+Public redirect URL: https://your-subdomain.ngrok.app/oauth/zoom/callback
+```
+
+Pros:
+- best match for the real OAuth flow because your own app receives the callback directly
+- easy to inspect requests locally while keeping your app logic in one place
+- useful if you also need to exchange the code for tokens automatically
+
+Cons:
+- requires running a local server plus the tunnel
+- slightly more setup than a capture-only endpoint
+- you are exposing a local service to the internet, so keep the callback narrow and temporary
+
+**Option 2: `webhook.site` for one-off callback capture**
+
+Example:
+
+```text
+https://webhook.site/your-token
+```
+
+Pros:
+- fastest path when you just need to capture the authorization redirect once
+- no local server required
+- easy to inspect the query string and copy out `code` and `state`
+
+Cons:
+- not a full OAuth app backend; you still need to exchange the code for tokens yourself
+- weaker fit for repeated development flows and team usage
+- the authorization code is sensitive, so only use this for short-lived development testing and
+  avoid shared or long-lived capture URLs
+
+Practical recommendation:
+- use plain `localhost` if you only need a one-off auth code and are fine copying it manually
+- use `ngrok` if you are building a real integration or expect to repeat the flow
+- use `webhook.site` only for quick one-off testing when you do not yet have a callback handler
 
 ## Step 2: Configure Zoom MCP Scopes
 
 Add the MCP-specific granular scopes required by the tools you want to use.
 
-| Scope | Needed for |
-|-------|------------|
-| `meeting:read:search` | `search_meetings` |
-| `meeting:read:assets` | `get_meeting_assets` |
-| `cloud_recording:read:list_user_recordings` | `recordings_list` |
-| `cloud_recording:read:content` | `get_recording_resource` |
-| `docs:write:import` | `create_new_file_with_markdown` |
+| Product Area | Scope | Zoom label | Needed for |
+|--------------|-------|------------|------------|
+| Meeting | `meeting:read:search` | Search and view meetings | `search_meetings` |
+| Meeting | `meeting:read:assets` | View a meeting's assets | `get_meeting_assets` |
+| Recording | `cloud_recording:read:list_user_recordings` | Lists all cloud recordings for a user. | `recordings_list` |
+| Recording | `cloud_recording:read:content` | read recording content scope | `get_recording_resource` |
+| Zoom Docs | `docs:write:import` | Create new file by import | `create_new_file_with_markdown` |
 
-Whiteboard MCP uses a separate scope set. See [../whiteboard/SKILL.md](../whiteboard/SKILL.md).
+Minimum recommendation for the main Zoom MCP connector:
+- use a General app
+- use user-level OAuth
+- include all five scopes above on the same app
 
 ## Step 3: Authorize and Exchange for Tokens
 
@@ -38,7 +111,7 @@ Whiteboard MCP uses a separate scope set. See [../whiteboard/SKILL.md](../whiteb
    ```
    https://zoom.us/oauth/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI
    ```
-2. Sign in and approve the app.
+2. Sign in as the Zoom user who should authorize the app and approve the requested scopes.
 3. Copy the `code` from the redirect URL.
 4. Exchange the code for tokens:
    ```bash
@@ -47,6 +120,10 @@ Whiteboard MCP uses a separate scope set. See [../whiteboard/SKILL.md](../whiteb
      -d "grant_type=authorization_code&code=CODE&redirect_uri=REDIRECT_URI"
    ```
 5. Store the returned `access_token` and `refresh_token`.
+
+If you used `webhook.site`, the callback will arrive as a captured request and the `code`
+parameter will be in the query string. Exchange it immediately and do not keep using the same
+capture URL longer than necessary.
 
 ## Step 4: Enable AI Companion Features
 

@@ -41,14 +41,6 @@ Common downstream validation response:
 |------|-------------|-------|-----|
 | `create_new_file_with_markdown` | `Upstream API returned error status code: 400 ... "message":"invalid param"` | Invalid parameter value such as a bogus `parent_id` | Fix the argument value and retry |
 
-## Whiteboard Server Split
-
-The Zoom MCP server (`mcp-us.zoom.us/mcp/zoom/streamable`) and the Whiteboard MCP server
-(`mcp-us.zoom.us/mcp/whiteboard/streamable`) are separate surfaces.
-
-Use the dedicated Whiteboard MCP skill for Whiteboard-specific auth, scopes, and identifier mapping:
-- [../whiteboard/SKILL.md](../whiteboard/SKILL.md)
-
 ## Debugging Checklist
 
 1. Confirm the client can discover the current MCP tool list through `tools/list`.

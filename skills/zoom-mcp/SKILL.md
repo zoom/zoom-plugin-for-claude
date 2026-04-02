@@ -1,6 +1,6 @@
 ---
 name: zoom-mcp
-description: Guidance for the bundled Zoom MCP connector. Use after routing to an MCP workflow when planning or troubleshooting tool-based access to meetings, recordings, meeting assets, transcripts, or Zoom Docs. Route Whiteboard-specific MCP requests to `zoom-mcp/whiteboard`.
+description: Guidance for the bundled Zoom MCP connector. Use after routing to an MCP workflow when planning or troubleshooting tool-based access to meetings, recordings, meeting assets, transcripts, or Zoom Docs.
 user-invocable: false
 triggers:
   - "zoom mcp"
@@ -43,9 +43,6 @@ Current tool names from the Zoom MCP server:
 Some MCP clients namespace server tools in the UI, for example `zoom-mcp:recordings_list`.
 Treat the raw tool names above as authoritative.
 
-Whiteboard-specific MCP work is covered by the dedicated skill
-[whiteboard/SKILL.md](whiteboard/SKILL.md).
-
 ## Quick Start
 
 **1. Export the token expected by the bundled connector:**
@@ -80,18 +77,18 @@ A Server-to-Server OAuth token can:
 - complete `tools/list`
 - open SSE sessions
 
-Use user OAuth as the default execution path for Zoom MCP tool use unless you have already
-validated S2S scope coverage and tool execution for your app.
+Use a **General app** with **user-level OAuth** as the default execution path for Zoom MCP
+tool use unless you have already validated S2S scope coverage and tool execution for your app.
 
 **2. Zoom MCP uses MCP-specific granular scopes**
 
 The Zoom MCP scope set is not the same as the older broad REST scopes.
 The key scopes for this surface are:
-- `meeting:read:search`
-- `meeting:read:assets`
-- `cloud_recording:read:list_user_recordings`
-- `cloud_recording:read:content`
-- `docs:write:import` for Zoom Docs creation
+- `meeting:read:search` — Search and view meetings
+- `meeting:read:assets` — View a meeting's assets
+- `cloud_recording:read:list_user_recordings` — Lists all cloud recordings for a user.
+- `cloud_recording:read:content` — read recording content scope
+- `docs:write:import` — Create new file by import
 
 **3. AI Companion features are feature prerequisites, not scope substitutes**
 
@@ -99,12 +96,7 @@ Semantic meeting search, meeting assets, and recording-content retrieval depend 
 features such as **Smart Recording** and **Meeting Summary** for useful results. These feature
 settings do not replace the required OAuth scopes.
 
-**4. Whiteboard is a separate MCP surface**
-
-The Zoom MCP endpoint and the Whiteboard MCP endpoint are separate. Route Whiteboard-specific
-requests to [whiteboard/SKILL.md](whiteboard/SKILL.md).
-
-**5. Use REST for deterministic meeting CRUD**
+**4. Use REST for deterministic meeting CRUD**
 
 The current Zoom MCP tool surface does not expose deterministic
 meeting create, update, or delete tools. If the user needs explicit meeting CRUD operations,
@@ -116,9 +108,6 @@ route to [../rest-api/SKILL.md](../rest-api/SKILL.md).
 |-----------|-----|
 | Streamable HTTP (recommended) | `https://mcp-us.zoom.us/mcp/zoom/streamable` |
 | SSE (fallback) | `https://mcp-us.zoom.us/mcp/zoom/sse` |
-
-Dedicated Whiteboard MCP skill:
-- [whiteboard/SKILL.md](whiteboard/SKILL.md)
 
 ## Search and Retrieval Model
 
@@ -202,7 +191,6 @@ Full error reference: [references/error-codes.md](references/error-codes.md)
 ### References
 - [references/tools.md](references/tools.md) — Current Zoom MCP tool reference
 - [references/error-codes.md](references/error-codes.md) — MCP and Zoom API errors with fixes
-- [whiteboard/SKILL.md](whiteboard/SKILL.md) — Dedicated Whiteboard MCP skill
 
 ### Troubleshooting
 - [troubleshooting/common-errors.md](troubleshooting/common-errors.md) — Scope failures, endpoint mixups, search/recording issues

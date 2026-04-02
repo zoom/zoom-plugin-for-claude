@@ -1,0 +1,35 @@
+# Plugin for Claude
+
+Cross-platform discovery file for agent tools that look for `AGENTS.md`.
+
+## What This Repo Provides
+
+This repository contains a Zoom developer plugin centered on `SKILL.md`-based workflows and reference material.
+
+Primary capabilities:
+- choose the right Zoom surface for a use case
+- plan Zoom integrations across REST APIs, SDKs, webhooks, OAuth, and MCP
+- debug broken Zoom integrations
+- provide deep product-specific reference material under `skills/`
+
+## Primary Entry Skills
+
+- `skills/start/SKILL.md` — default routing entry point
+- `skills/choose-stack/SKILL.md` — pick the right Zoom surface
+- `skills/app-plan/SKILL.md` — turn an idea into an implementation plan
+- `skills/debug-integration/SKILL.md` — isolate the failing integration layer
+- `skills/mcp-setup/SKILL.md` — plan a Zoom MCP workflow for Claude
+
+## Repo Shape
+
+- `.claude-plugin/plugin.json` — Claude plugin manifest
+- `.mcp.json` — bundled Zoom MCP server definition
+- `skills/` — all plugin skills and supporting references
+- `README.md` — user-facing overview
+- `CONNECTORS.md` — bundled MCP connector notes
+
+## Usage Notes
+
+- For Claude Code, install or load this as a plugin.
+- For other agent ecosystems, treat the `skills/` tree as the primary reusable asset.
+- Workflow skills are the front door; product-specific folders under `skills/` are supporting references.

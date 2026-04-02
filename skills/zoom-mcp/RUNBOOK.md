@@ -19,13 +19,11 @@ If empty, export `ZOOM_MCP_ACCESS_TOKEN` using [concepts/oauth-setup.md](concept
 **3. Correct OAuth scopes on the token?**
 
 Minimum Zoom MCP scopes for this guide:
-- `meeting:read:search`
-- `meeting:read:assets`
-- `cloud_recording:read:list_user_recordings`
-- `cloud_recording:read:content`
-- `docs:write:import` if you want Zoom Docs creation
-
-Whiteboard uses a separate scope set. See [whiteboard/SKILL.md](whiteboard/SKILL.md).
+- `meeting:read:search` — Search and view meetings
+- `meeting:read:assets` — View a meeting's assets
+- `cloud_recording:read:list_user_recordings` — Lists all cloud recordings for a user.
+- `cloud_recording:read:content` — read recording content scope
+- `docs:write:import` — Create new file by import
 
 **4. AI Companion features enabled?**
 

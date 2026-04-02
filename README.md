@@ -10,10 +10,7 @@ Before using the bundled MCP servers, export bearer tokens for the Zoom surfaces
 
 ```bash
 export ZOOM_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"
-export ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"
 ```
-
-If one Zoom user OAuth token has both the core Zoom MCP scopes and the Whiteboard scopes, both environment variables can use the same token value.
 
 ## Slash Workflows
 
@@ -81,7 +78,11 @@ The plugin also keeps the original Zoom product-specific reference library under
 
 ## Connectors
 
-See [CONNECTORS.md](CONNECTORS.md). The plugin works standalone from the bundled skills, and gets supercharged when Claude can use the bundled Zoom MCP servers from [`.mcp.json`](.mcp.json).
+See [CONNECTORS.md](CONNECTORS.md). The plugin works standalone from the bundled skills, and gets supercharged when Claude can use the bundled Zoom MCP server from [`.mcp.json`](.mcp.json).
+
+## Cross-Platform Notes
+
+This repo is packaged first as a Claude plugin, but it also includes [AGENTS.md](AGENTS.md) for agent ecosystems that use a repo-level discovery file. The reusable core remains the `skills/` tree and its `SKILL.md` files.
 
 ## Structure
 

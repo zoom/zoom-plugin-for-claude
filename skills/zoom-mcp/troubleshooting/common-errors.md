@@ -89,17 +89,15 @@ sent to the wrong MCP surface.
 
 **Fix:**
 - Zoom MCP: `https://mcp-us.zoom.us/mcp/zoom/streamable`
-- Whiteboard MCP: `https://mcp-us.zoom.us/mcp/whiteboard/streamable`
 - re-run `tools/list`
 - use the current tool names exposed by that server
-- if the request is Whiteboard-specific, route to [../whiteboard/SKILL.md](../whiteboard/SKILL.md)
 
 ### MCP server not appearing in the client
 
 **Fix:**
 - confirm the plugin is enabled
-- confirm `ZOOM_MCP_ACCESS_TOKEN` or `ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN` is set as needed
-- restart Claude Code so the bundled MCP servers restart
+- confirm `ZOOM_MCP_ACCESS_TOKEN` is set
+- restart Claude Code so the bundled MCP server restarts
 
 ## Parameter and Call-Handling Issues
 
