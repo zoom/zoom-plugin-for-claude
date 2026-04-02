@@ -6,17 +6,13 @@ Diagnostic guide for the most frequent issues when using the Zoom MCP server.
 
 ### `Access token is required` (`-32001`)
 
-**Cause:** The Authorization header was not included when the MCP server was registered, or the
-registration is missing.
+**Cause:** The bundled connector does not have a token available, so no Authorization header is
+sent to the Zoom MCP endpoint.
 
-**Fix:** Re-register the MCP server with a bearer token.
+**Fix:** Set `ZOOM_MCP_ACCESS_TOKEN` and restart Claude Code or re-enable the plugin.
 
 ```bash
-claude mcp remove zoom-mcp
-claude mcp add --transport http zoom-mcp \
-  https://mcp-us.zoom.us/mcp/zoom/streamable \
-  --header "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-  --scope user
+export ZOOM_MCP_ACCESS_TOKEN="YOUR_ACCESS_TOKEN"
 ```
 
 ### `Invalid access token` (`-32001`)
@@ -24,7 +20,7 @@ claude mcp add --transport http zoom-mcp \
 **Cause:** The access token expired, was revoked, or does not contain the exact MCP scopes needed
 for the tool you called.
 
-**Fix:** Refresh the token and verify the MCP-specific granular scopes.
+**Fix:** Refresh the token, update `ZOOM_MCP_ACCESS_TOKEN`, restart Claude Code, and verify the MCP-specific granular scopes.
 
 ## Scope Issues
 
@@ -88,7 +84,7 @@ Returned resource URLs still require the bearer token.
 
 ### `Can not found tool: ... in this MCP Server` (`-32602`)
 
-**Cause:** The requested tool does not exist on the registered MCP server, or the request was
+**Cause:** The requested tool does not exist on the active MCP server, or the request was
 sent to the wrong MCP surface.
 
 **Fix:**
@@ -101,9 +97,9 @@ sent to the wrong MCP surface.
 ### MCP server not appearing in the client
 
 **Fix:**
-- run `claude mcp list`
-- if missing, re-add the server
-- confirm the client is using the expected bearer token
+- confirm the plugin is enabled
+- confirm `ZOOM_MCP_ACCESS_TOKEN` or `ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN` is set as needed
+- restart Claude Code so the bundled MCP servers restart
 
 ## Parameter and Call-Handling Issues
 

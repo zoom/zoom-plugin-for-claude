@@ -3,7 +3,8 @@
 ## Overview
 
 The primary documented path for Zoom MCP is **user OAuth**. Each user authorizes with their
-own Zoom account, and the resulting bearer token is sent with MCP requests.
+own Zoom account, and the resulting bearer token is passed by the bundled connector in
+[`.mcp.json`](../../../.mcp.json).
 
 A **Server-to-Server OAuth** token can initialize against the MCP gateway and complete
 `tools/list`. That means S2S is not outright blocked at the transport layer. Do not assume
@@ -61,18 +62,16 @@ Important:
 - these settings do **not** replace the OAuth scopes above
 - they affect whether useful recap and transcript content exists for MCP retrieval
 
-## Step 5: Add the MCP Server to Your Client
+## Step 5: Provide the Token to the Bundled MCP Connector
 
-Claude Code example:
+Export the token environment variable used by this plugin:
 
 ```bash
-claude mcp add --transport http zoom-mcp \
-  https://mcp-us.zoom.us/mcp/zoom/streamable \
-  --header "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-  --scope user
+export ZOOM_MCP_ACCESS_TOKEN="YOUR_ACCESS_TOKEN"
 ```
 
 Verification:
+- restart Claude Code or re-enable the plugin so the bundled MCP server restarts with the token
 - confirm the client can see `recordings_list`, `search_meetings`, `get_meeting_assets`,
   `get_recording_resource`, and `create_new_file_with_markdown`
 - if your client exposes protocol inspection, use `tools/list` as the authority for the live catalog
@@ -84,7 +83,7 @@ Verification:
 |----------|---------|
 | Access token expiry | About 1 hour |
 | Refresh flow | Exchange `refresh_token` for a new `access_token` |
-| Client update | Refresh the bearer token used by the MCP client registration |
+| Client update | Update `ZOOM_MCP_ACCESS_TOKEN`, then restart Claude Code or re-enable the plugin |
 
 Refresh exchange:
 
@@ -106,7 +105,7 @@ If you want to test S2S against the MCP gateway:
 ```bash
 ZOOM_CLIENT_ID=your_client_id
 ZOOM_CLIENT_SECRET=your_client_secret
-ZOOM_OAUTH_TOKEN=your_access_token
+ZOOM_MCP_ACCESS_TOKEN=your_access_token
 ZOOM_REFRESH_TOKEN=your_refresh_token
 ```
 

@@ -1,6 +1,6 @@
 ---
 name: zoom-mcp
-description: Reference skill for Zoom-hosted MCP workflows. Use after routing to an MCP workflow when planning tool-based access to meetings, recordings, meeting assets, transcripts, or Zoom Docs. Route Whiteboard-specific MCP requests to `zoom-mcp/whiteboard`.
+description: Guidance for the bundled Zoom MCP connector. Use after routing to an MCP workflow when planning or troubleshooting tool-based access to meetings, recordings, meeting assets, transcripts, or Zoom Docs. Route Whiteboard-specific MCP requests to `zoom-mcp/whiteboard`.
 user-invocable: false
 triggers:
   - "zoom mcp"
@@ -21,11 +21,11 @@ triggers:
 
 # Zoom MCP
 
-Background reference for Claude-accessible Zoom MCP workflows. Prefer `design-mcp-workflow` or [mcp-setup](../mcp-setup/SKILL.md) first, then route here for tool-surface details and MCP-specific constraints.
+Guidance for the bundled Zoom MCP connector in this Claude plugin. Prefer `design-mcp-workflow` or [mcp-setup](../mcp-setup/SKILL.md) first, then route here for tool-surface details, auth expectations, and MCP-specific constraints.
 
 # Zoom MCP Server
 
-Zoom hosts an MCP server at `mcp-us.zoom.us` for AI-agent access to:
+This plugin bundles Zoom's hosted MCP server at `mcp-us.zoom.us` for AI-agent access to:
 
 - semantic meeting search
 - meeting-linked asset retrieval
@@ -48,21 +48,21 @@ Whiteboard-specific MCP work is covered by the dedicated skill
 
 ## Quick Start
 
-**1. Add to an MCP client (Claude Code example):**
+**1. Export the token expected by the bundled connector:**
+
 ```bash
-claude mcp add --transport http zoom-mcp \
-  https://mcp-us.zoom.us/mcp/zoom/streamable \
-  --header "Authorization: Bearer YOUR_ZOOM_OAUTH_TOKEN" \
-  --scope user
+export ZOOM_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"
 ```
 
-**2. Verify discovery:**
+**2. Enable or restart the plugin so Claude restarts the bundled MCP server definition.**
+
+**3. Verify discovery:**
 - Confirm the client can see `recordings_list`, `search_meetings`, `get_meeting_assets`,
   `get_recording_resource`, and `create_new_file_with_markdown`.
 - If the client exposes raw protocol inspection, `tools/list` is the authoritative discovery source.
 - The current catalog is documented in [references/tools.md](references/tools.md).
 
-**3. Run the first useful call:**
+**4. Run the first useful call:**
 ```text
 recordings_list
   userId: "me"
@@ -180,7 +180,7 @@ create_new_file_with_markdown
 
 | Code | Meaning | Fix |
 |------|---------|-----|
-| `401 Unauthorized` | Missing or rejected bearer token at the endpoint | Re-register the MCP server with a valid bearer token |
+| `401 Unauthorized` | Missing or rejected bearer token at the endpoint | Set `ZOOM_MCP_ACCESS_TOKEN`, then restart Claude or re-enable the plugin |
 | `-32001 Invalid access token` | Token expired, malformed, or missing required scopes | Refresh OAuth token and verify the MCP-specific scopes |
 | `-32602 Can not found tool` | Requested tool name is not exposed by the active MCP server | Re-run `tools/list` and use the current tool names for that endpoint |
 | `404` | Possible downstream resource-not-found response | Re-discover the target with `search_meetings` or `recordings_list` |

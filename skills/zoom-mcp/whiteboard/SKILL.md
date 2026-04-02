@@ -1,9 +1,9 @@
 ---
 name: zoom-mcp/whiteboard
 description: |
-  Zoom Whiteboard MCP server guidance. Use for Whiteboard MCP auth, endpoints, ID mapping,
-  and tool workflows such as list_whiteboards and get_a_whiteboard. Prefer this child
-  skill when the request is specifically about Whiteboard MCP rather than general Zoom MCP.
+  Guidance for the bundled Zoom Whiteboard MCP connector. Use for Whiteboard MCP auth,
+  endpoints, ID mapping, and tool workflows such as list_whiteboards and get_a_whiteboard.
+  Prefer this skill when the request is specifically about Whiteboard MCP rather than general Zoom MCP.
 user-invocable: false
 triggers:
   - "whiteboard mcp"
@@ -35,6 +35,7 @@ Dedicated guidance for Zoom's Whiteboard MCP server.
   execution must be validated separately for your app and Whiteboard scopes.
 - Practical rule: start with **user OAuth** for Whiteboard MCP unless you have already
   proven your S2S app can mint and execute with the required Whiteboard scopes.
+- The bundled connector expects the token in `ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN`.
 
 Reference: [references/authentication-and-identifiers.md](references/authentication-and-identifiers.md)
 

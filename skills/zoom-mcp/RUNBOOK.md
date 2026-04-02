@@ -4,12 +4,11 @@ Quick diagnostic checklist before using the Zoom MCP server.
 
 ## Preflight Checklist
 
-**1. MCP server registered?**
+**1. Token exported for the bundled connector?**
 ```bash
-claude mcp list
-# Should show: zoom-mcp -> https://mcp-us.zoom.us/mcp/zoom/streamable
+echo "${ZOOM_MCP_ACCESS_TOKEN:+set}"
 ```
-If missing, re-add it using [concepts/oauth-setup.md](concepts/oauth-setup.md).
+If empty, export `ZOOM_MCP_ACCESS_TOKEN` using [concepts/oauth-setup.md](concepts/oauth-setup.md).
 
 **2. Tool discovery working?**
 - Confirm the client can see `recordings_list`, `search_meetings`, `get_meeting_assets`,
@@ -38,12 +37,12 @@ meeting assets, or transcript-rich recording content to be useful.
 
 | Symptom | Likely cause | Fix |
 |---------|-------------|-----|
-| `-32001 Access token is required` | Header not passed | Re-register the MCP server with a bearer token |
+| `-32001 Access token is required` | Token env var missing or empty | Export `ZOOM_MCP_ACCESS_TOKEN`, then restart Claude Code |
 | `-32001 Invalid access token, does not contain scopes:[meeting:read:search]` | Missing semantic-search scope | Add `meeting:read:search` and mint a new user token |
 | `-32001 Invalid access token, does not contain scopes:[meeting:read:assets,...]` | Missing meeting-assets scope | Add `meeting:read:assets` and mint a new user token |
 | `-32001 Invalid access token, does not contain scopes:[cloud_recording:read:list_user_recordings,...]` | Missing recordings-list scope | Add `cloud_recording:read:list_user_recordings` |
 | `-32001 Invalid access token, does not contain scopes:[cloud_recording:read:content]` | Missing recording-content scope | Add `cloud_recording:read:content` |
-| `-32602 Can not found tool: ... in this MCP Server` | Wrong endpoint surface or wrong tool name | Re-run `tools/list` and use the current tool names for the registered MCP server |
+| `-32602 Can not found tool: ... in this MCP Server` | Wrong endpoint surface or wrong tool name | Re-run `tools/list` and use the current tool names for the active MCP server |
 | `-32603 Call handle error` | Missing required parameters or server-side call handling failure | Re-check required arguments against the live schema and retry |
 | `Upstream API returned error status code: 400 ... invalid param` | Invalid parameter value passed through to the underlying Zoom API | Fix the specific argument value, such as `parent_id` for Docs creation |
 | Search returns no useful meeting content | AI Companion features missing or data not indexed | Enable Smart Recording + Meeting Summary, widen the search window, or fall back to `recordings_list` |

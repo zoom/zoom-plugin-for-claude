@@ -7,7 +7,7 @@ behind a tool call.
 
 | Code | Message | Cause | Fix |
 |------|---------|-------|-----|
-| `-32001` | `Access token is required` | Missing Authorization header | Re-register the MCP server with a bearer token |
+| `-32001` | `Access token is required` | Missing Authorization header because the bundled connector has no token | Set `ZOOM_MCP_ACCESS_TOKEN`, then restart Claude Code or re-enable the plugin |
 | `-32001` | `Invalid access token` | Expired, revoked, malformed, or missing required scopes | Refresh the token and verify the MCP-specific scopes |
 | `-32602` | `Can not found tool: ... in this MCP Server` | Wrong tool name or wrong MCP server surface | Re-run `tools/list` and use the current live tool names for that endpoint |
 | `-32603` | `Call handle error` | Missing required parameter or server-side call handling failure | Re-check required arguments against the live schema and retry |

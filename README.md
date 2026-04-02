@@ -4,7 +4,16 @@ A Claude plugin for planning, building, and debugging Zoom integrations. It help
 
 ## Installation
 
-Install this directory as a local Claude plugin. The plugin manifest is at [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) and Zoom MCP connectors are defined in [`.mcp.json`](.mcp.json).
+Install this directory as a local Claude plugin. The plugin manifest is at [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) and the bundled Zoom MCP connectors are defined in [`.mcp.json`](.mcp.json).
+
+Before using the bundled MCP servers, export bearer tokens for the Zoom surfaces you want Claude to use:
+
+```bash
+export ZOOM_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"
+export ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"
+```
+
+If one Zoom user OAuth token has both the core Zoom MCP scopes and the Whiteboard scopes, both environment variables can use the same token value.
 
 ## Slash Workflows
 
@@ -72,7 +81,7 @@ The plugin also keeps the original Zoom product-specific reference library under
 
 ## Connectors
 
-See [CONNECTORS.md](CONNECTORS.md). The plugin works standalone from the bundled skills, and gets supercharged when Claude can use the Zoom MCP servers from [`.mcp.json`](.mcp.json).
+See [CONNECTORS.md](CONNECTORS.md). The plugin works standalone from the bundled skills, and gets supercharged when Claude can use the bundled Zoom MCP servers from [`.mcp.json`](.mcp.json).
 
 ## Structure
 
