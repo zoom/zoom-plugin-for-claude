@@ -4,6 +4,7 @@ description: |
   Zoom Whiteboard MCP server guidance. Use for Whiteboard MCP auth, endpoints, ID mapping,
   and tool workflows such as list_whiteboards and get_a_whiteboard. Prefer this child
   skill when the request is specifically about Whiteboard MCP rather than general Zoom MCP.
+user-invocable: false
 triggers:
   - "whiteboard mcp"
   - "zoom whiteboard mcp"

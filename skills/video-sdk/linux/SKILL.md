@@ -1,6 +1,7 @@
 ---
 name: video-sdk/linux
 description: "Zoom Video SDK for Linux - C++ headless bots, raw audio/video capture/injection, Qt/GTK integration, Docker support"
+user-invocable: false
 triggers:
 - linux video sdk
 - zoom linux

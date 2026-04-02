@@ -4,6 +4,7 @@ description: |
   Zoom Meeting SDK for Web - Embed Zoom meeting capabilities into web applications. Two integration
   options: Client View (full-page, familiar Zoom UI) and Component View (embeddable, Promise-based API).
   Includes SharedArrayBuffer setup for HD video, gallery view, and virtual backgrounds.
+user-invocable: false
 triggers:
   - "embed meeting web"
   - "meeting in react"

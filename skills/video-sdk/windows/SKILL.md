@@ -1,6 +1,7 @@
 ---
 name: video-sdk/windows
 description: "Zoom Video SDK for Windows - C++ integration for video sessions, raw audio/video capture, screen sharing, recording, and real-time communication"
+user-invocable: false
 triggers:
   - "video sdk windows"
   - "windows video sdk"

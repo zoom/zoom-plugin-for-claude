@@ -3,6 +3,7 @@ name: zoom-meeting-sdk-ios
 description: |
   Zoom Meeting SDK for iOS native apps. Use when embedding Zoom meetings in iOS with
   default/custom UI, PKCE + SDK auth, host start with ZAK, and mobile lifecycle handling.
+user-invocable: false
 triggers:
   - "meeting sdk ios"
   - "zoom ios sdk"

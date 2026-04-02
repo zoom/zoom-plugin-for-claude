@@ -1,6 +1,7 @@
 ---
 name: contact-center/web
 description: "Zoom Contact Center SDK for Web. Use for web chat/video/campaign embeds, engagement event handling, app-context integrations, and Smart Embed postMessage workflows."
+user-invocable: false
 triggers:
   - "contact center web"
   - "zcc web sdk"

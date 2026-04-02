@@ -3,6 +3,7 @@ name: zoom-video-sdk-react-native
 description: |
   Zoom Video SDK for React Native. Use when building custom mobile video session experiences
   with @zoom/react-native-videosdk, event listeners, helper-based APIs, and backend JWT token flows.
+user-invocable: false
 triggers:
   - react native video sdk
   - zoom react native video sdk
