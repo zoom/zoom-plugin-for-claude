@@ -1,9 +1,9 @@
 {
-  "name": "zoom-code-plugin",
+  "name": "plugin-for-claude",
   "description": "Claude plugin for planning, building, and debugging Zoom integrations across REST APIs, SDKs, webhooks, bots, and MCP workflows",
   "version": "1.1.0",
   "homepage": "https://developers.zoom.us/",
-  "repository": "https://github.com/zoom/skills",
+  "repository": "https://github.com/zoom/plugin-for-claude",
   "license": "MIT",
   "keywords": [
     "zoom",
@@ -17,6 +17,6 @@
   ],
   "author": {
     "name": "Zoom",
-    "url": "https://github.com/zoom/skills"
+    "url": "https://github.com/zoom/plugin-for-claude"
   }
 }

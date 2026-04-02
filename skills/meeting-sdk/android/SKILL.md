@@ -38,7 +38,7 @@ Use this skill when building Android apps with embedded Zoom meeting capabilitie
 
 - Docs: https://developers.zoom.us/docs/meeting-sdk/android/
 - API reference: https://marketplacefront.zoom.us/sdk/meeting/android/index.html
-- Parent skill: [../SKILL.md](../SKILL.md)
+- Broader guide: [../SKILL.md](../SKILL.md)
 
 ## Operations
 

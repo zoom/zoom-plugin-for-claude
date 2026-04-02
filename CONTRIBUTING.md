@@ -66,6 +66,20 @@ description: |
 4. **Document gotchas** - Common mistakes and limitations
 5. **Link to official sources** - Prefer Zoom documentation
 
+### Maintenance Checklist
+
+Use this checklist before merging documentation or skill changes:
+
+1. Confirm you are editing the correct skill or product folder.
+2. Keep `SKILL.md` as the entrypoint in every skill directory.
+3. If examples include credentials, reference `.env` keys rather than hardcoded values.
+4. Never commit machine-local absolute paths or machine-specific endpoints.
+5. After moving or renaming docs, update cross-links from the relevant parent `SKILL.md` files.
+6. Verify frontmatter stays accurate: `name`, `description`, and any optional fields such as `triggers`, `argument-hint`, or `user-invocable`.
+7. Remove dead links and stale product claims after any refactor or version update.
+8. Make sure every new markdown file is reachable from at least one parent navigation file.
+9. Track deprecations and renames explicitly so future updates remain migration-safe.
+
 ### Repository Naming Conventions
 
 - Keep canonical skill folder names aligned with [skills/start/SKILL.md](skills/start/SKILL.md).
@@ -80,17 +94,6 @@ description: |
 - Do not use backticks for local doc references if you want them counted in relationship graphs.
 - Use repository-relative paths; do not commit machine-local absolute paths (for example `/home/your-user/...`).
 - Every new `.md` file should be linked from at least one parent/index/`SKILL.md` file.
-
-### Relationship Graph Maintenance
-
-After adding or moving docs, regenerate the relationship graph:
-
-```bash
-node md-graph/build-graph.mjs . md-graph/data.json
-cp md-graph/data.json /path/to/your/hosted/skills-relationship/data.json
-```
-
-Graph generation intentionally excludes non-skill content directories such as `raw-docs`, `md-graph`, `tools`, hidden directories, and dependency/vendor folders.
 
 ## Using Claude for Contributions
 
@@ -154,6 +157,8 @@ You can use Claude (or other AI assistants) to help create or improve skills:
 - Document known limitations prominently
 - Link to official resources
 - Keep examples simple and practical
+- Check that moved or renamed docs still have inbound links
+- Remove outdated guidance that no longer matches the current plugin structure
 
 ### Don't
 

@@ -21,7 +21,7 @@ sources. Zoom exposes hosted MCP surfaces that clients can discover and call ove
 | Streamable HTTP (recommended) | `https://mcp-us.zoom.us/mcp/whiteboard/streamable` |
 | SSE (fallback) | `https://mcp-us.zoom.us/mcp/whiteboard/sse` |
 
-In this repo, Whiteboard MCP is handled by the child skill
+Whiteboard MCP is covered by the dedicated skill
 [../whiteboard/SKILL.md](../whiteboard/SKILL.md).
 
 ## Discovery Model

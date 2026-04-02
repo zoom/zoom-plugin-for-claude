@@ -2,7 +2,7 @@
 
 This plugin works in two modes:
 
-- Standalone: Claude uses the bundled Zoom skills and reference material in this repo.
+- Standalone: Claude uses the bundled Zoom skills and reference material included with this plugin.
 - Supercharged: Claude can also use the Zoom MCP servers from [`.mcp.json`](./.mcp.json) for live tool access.
 
 ## Included MCP Servers

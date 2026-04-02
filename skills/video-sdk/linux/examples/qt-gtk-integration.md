@@ -6,5 +6,4 @@ For native UI apps:
 - render video into your window surface
 - handle threading carefully
 
-This file exists to satisfy navigation links from `SKILL.md`.
-
+Use this pattern when you are embedding the Linux SDK into an existing native desktop UI.

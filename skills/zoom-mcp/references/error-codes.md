@@ -12,7 +12,7 @@ behind a tool call.
 | `-32602` | `Can not found tool: ... in this MCP Server` | Wrong tool name or wrong MCP server surface | Re-run `tools/list` and use the current live tool names for that endpoint |
 | `-32603` | `Call handle error` | Missing required parameter or server-side call handling failure | Re-check required arguments against the live schema and retry |
 
-## Exact Scope Errors Observed in This Repo
+## Exact Scope Errors Observed in Testing
 
 | Tool | Exact missing-scope error |
 |------|---------------------------|
@@ -46,7 +46,7 @@ Common downstream validation response:
 The Zoom MCP server (`mcp-us.zoom.us/mcp/zoom/streamable`) and the Whiteboard MCP server
 (`mcp-us.zoom.us/mcp/whiteboard/streamable`) are separate surfaces.
 
-Use the Whiteboard child skill for Whiteboard-specific auth, scopes, and identifier mapping:
+Use the dedicated Whiteboard MCP skill for Whiteboard-specific auth, scopes, and identifier mapping:
 - [../whiteboard/SKILL.md](../whiteboard/SKILL.md)
 
 ## Debugging Checklist

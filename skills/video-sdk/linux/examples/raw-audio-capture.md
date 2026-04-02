@@ -6,5 +6,4 @@ Use raw audio capture when you need:
 - diarization
 - audio analytics
 
-This file exists to satisfy cross-links from concept docs and `SKILL.md`.
-
+Use this pattern when you need a minimal starting point for audio capture and downstream analysis.

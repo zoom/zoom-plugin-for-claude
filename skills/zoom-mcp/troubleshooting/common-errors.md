@@ -110,7 +110,7 @@ sent to the wrong MCP surface.
 ### `Call handle error` (`-32603`)
 
 **Cause:** The tool call was accepted at the protocol layer, but the server failed while
-handling the call. In this repo, this was reproduced by calling `recordings_list` without
+handling the call. One observed case was calling `recordings_list` without the
 required arguments.
 
 **Fix:**
@@ -120,7 +120,7 @@ required arguments.
 ### Upstream `400 invalid param`
 
 **Cause:** The MCP tool reached the downstream Zoom API, but one of the passed arguments was
-invalid. In this repo, this was reproduced by calling `create_new_file_with_markdown` with a
+invalid. One observed case was calling `create_new_file_with_markdown` with a
 bogus `parent_id`.
 
 **Fix:**

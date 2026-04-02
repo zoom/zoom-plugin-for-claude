@@ -43,7 +43,7 @@ Current tool names from the Zoom MCP server:
 Some MCP clients namespace server tools in the UI, for example `zoom-mcp:recordings_list`.
 Treat the raw tool names above as authoritative.
 
-Whiteboard-specific MCP work is split into the child skill
+Whiteboard-specific MCP work is covered by the dedicated skill
 [whiteboard/SKILL.md](whiteboard/SKILL.md).
 
 ## Quick Start
@@ -117,7 +117,7 @@ route to [../rest-api/SKILL.md](../rest-api/SKILL.md).
 | Streamable HTTP (recommended) | `https://mcp-us.zoom.us/mcp/zoom/streamable` |
 | SSE (fallback) | `https://mcp-us.zoom.us/mcp/zoom/sse` |
 
-Whiteboard child skill:
+Dedicated Whiteboard MCP skill:
 - [whiteboard/SKILL.md](whiteboard/SKILL.md)
 
 ## Search and Retrieval Model
@@ -202,7 +202,7 @@ Full error reference: [references/error-codes.md](references/error-codes.md)
 ### References
 - [references/tools.md](references/tools.md) — Current Zoom MCP tool reference
 - [references/error-codes.md](references/error-codes.md) — MCP and Zoom API errors with fixes
-- [whiteboard/SKILL.md](whiteboard/SKILL.md) — Whiteboard MCP child skill
+- [whiteboard/SKILL.md](whiteboard/SKILL.md) — Dedicated Whiteboard MCP skill
 
 ### Troubleshooting
 - [troubleshooting/common-errors.md](troubleshooting/common-errors.md) — Scope failures, endpoint mixups, search/recording issues

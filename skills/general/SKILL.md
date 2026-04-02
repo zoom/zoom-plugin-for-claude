@@ -203,7 +203,6 @@ Both receive event notifications, but differ in approach:
 | [React Native Video Sessions](use-cases/react-native-video-sessions.md) | Build custom mobile video sessions in React Native | [zoom-video-sdk-react-native](../video-sdk/react-native/SKILL.md) + [zoom-oauth](../oauth/SKILL.md) |
 | [Immersive Experiences](use-cases/immersive-experiences.md) | Custom video layouts with Layers API | [zoom-apps-sdk](../zoom-apps-sdk/SKILL.md) |
 | [Collaborative Apps](use-cases/collaborative-apps.md) | Real-time shared state in meetings | [zoom-apps-sdk](../zoom-apps-sdk/SKILL.md) |
-| [Forum Triage Skill Coverage](use-cases/forum-triage-skill-coverage.md) | Cluster and label forum threads to improve skill coverage | [zoom-general](SKILL.md) + product skills |
 | [Contact Center App Lifecycle and Context Switching](use-cases/contact-center-app-lifecycle-and-context-switching.md) | Build Contact Center apps that handle engagement events and multi-engagement state | [contact-center](../contact-center/SKILL.md) + [zoom-apps-sdk](../zoom-apps-sdk/SKILL.md) |
 | [Virtual Agent Campaign Web and Mobile Wrapper](use-cases/virtual-agent-campaign-web-mobile-wrapper.md) | Deliver one campaign-driven bot flow across web and native mobile wrappers | [virtual-agent](../virtual-agent/SKILL.md) + [contact-center](../contact-center/SKILL.md) |
 | [Virtual Agent Knowledge Base Sync Pipeline](use-cases/virtual-agent-knowledge-base-sync-pipeline.md) | Sync external knowledge content into Zoom Virtual Agent using web sync or custom API connectors | [virtual-agent](../virtual-agent/SKILL.md) + [zoom-rest-api](../rest-api/SKILL.md) + [zoom-oauth](../oauth/SKILL.md) |
@@ -231,7 +230,6 @@ Both receive event notifications, but differ in approach:
 - [Video SDK Bring Your Own Storage](use-cases/video-sdk-bring-your-own-storage.md): configure Video SDK cloud recordings to write directly to your own S3 bucket.
 - [Customer Support Cobrowsing](use-cases/customer-support-cobrowsing.md): implement customer-agent collaborative browsing support flows.
 - [Embed Meetings](use-cases/embed-meetings.md): embed Zoom meeting experience into your app.
-- [Forum Triage Skill Coverage](use-cases/forum-triage-skill-coverage.md): classify forum issues and map them to skill coverage gaps.
 - [Form Completion Assistant](use-cases/form-completion-assistant.md): build guided flows for form filling and completion assistance.
 - [HD Video Resolution](use-cases/hd-video-resolution.md): enable and troubleshoot high-definition video requirements.
 - [High-Volume Meeting Platform](use-cases/high-volume-meeting-platform.md): build distributed meeting creation and event processing with concrete fallback patterns.

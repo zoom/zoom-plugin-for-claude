@@ -2,7 +2,7 @@
 
 Stable pointer for Unreal Meeting SDK wrapper questions.
 
-Primary skill entrypoint:
+Start here:
 - [../unreal/SKILL.md](../unreal/SKILL.md)
 
 Common question patterns:

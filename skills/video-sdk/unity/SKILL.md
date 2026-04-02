@@ -31,7 +31,7 @@ Use this skill when building Unity apps that integrate Zoom Video SDK wrapper AP
 
 - Docs: https://developers.zoom.us/docs/video-sdk/unity/
 - API reference: https://marketplacefront.zoom.us/sdk/custom/unity/index.html
-- Parent skill: [../SKILL.md](../SKILL.md)
+- Broader guide: [../SKILL.md](../SKILL.md)
 
 ## Operations
 

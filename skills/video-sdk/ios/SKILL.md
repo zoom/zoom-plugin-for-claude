@@ -31,7 +31,7 @@ Use this skill when building custom iOS video session experiences.
 
 - Docs: https://developers.zoom.us/docs/video-sdk/ios/
 - API reference: https://marketplacefront.zoom.us/sdk/custom/ios/annotated.html
-- Parent skill: [../SKILL.md](../SKILL.md)
+- Broader guide: [../SKILL.md](../SKILL.md)
 
 ## Operations
 

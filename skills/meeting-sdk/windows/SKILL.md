@@ -1185,15 +1185,7 @@ If using a different version, use `grep "= 0" SDK/x64/h/*.h` to verify required 
 
 ---
 
-## 🤝 Contributing
-
-Found an issue or want to add more examples? These skills documentation files are meant to be living documents that grow with the community's experience.
-
----
-
-**Happy coding!** 🚀
-
-Remember: The [SDK Architecture Pattern](concepts/sdk-architecture-pattern.md) is your key to unlocking the entire SDK. Read it first!
+Remember: The [SDK Architecture Pattern](concepts/sdk-architecture-pattern.md) is the fastest way to understand how the Windows Meeting SDK fits together. Read it first if you are debugging custom UI or event flow issues.
 
 ## Operations
 

@@ -2,7 +2,7 @@
 
 ## Upgrade Strategy
 
-Use the repository-standard workflow:
+Use the standard upgrade workflow:
 - [../../general/references/sdk-upgrade-workflow.md](../../general/references/sdk-upgrade-workflow.md)
 
 ## Compatibility Risks

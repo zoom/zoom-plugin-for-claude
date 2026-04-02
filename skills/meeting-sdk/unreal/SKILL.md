@@ -31,7 +31,7 @@ Use this skill when integrating Meeting SDK into Unreal Engine projects.
 
 - Docs: https://developers.zoom.us/docs/meeting-sdk/unreal/
 - API reference: https://marketplacefront.zoom.us/sdk/meeting/unreal/MSDKUnrealSDKreferencedocs.html
-- Parent skill: [../SKILL.md](../SKILL.md)
+- Broader guide: [../SKILL.md](../SKILL.md)
 
 ## Operations
 

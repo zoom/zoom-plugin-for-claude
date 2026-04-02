@@ -679,13 +679,9 @@ Request → Send card with buttons → User clicks → Update status → Notify
   - Message cards reference
   - Common issues troubleshooting
 
-## Contributing
-
-This skill is part of the zoom-skills repository. Improvements welcome!
-
 ## Support
 
-For skill-related questions or improvements, please reference this SKILL.md for navigation.
+Use this SKILL.md as the navigation hub for Team Chat API selection, setup, examples, and troubleshooting.
 
 ## Environment Variables
 

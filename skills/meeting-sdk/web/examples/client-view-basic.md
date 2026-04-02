@@ -1,6 +1,6 @@
 # Client View (Basic) Example
 
-Minimal "get it to join" shape for Client View. This file exists primarily to satisfy navigation links from `../SKILL.md`.
+Minimal "get it to join" shape for Client View. Use it when you want the smallest possible starting point before layering in more configuration.
 
 ## When To Use
 
@@ -10,4 +10,3 @@ Minimal "get it to join" shape for Client View. This file exists primarily to sa
 ## Next
 
 - Read `../client-view/SKILL.md` for the full integration and config knobs.
-

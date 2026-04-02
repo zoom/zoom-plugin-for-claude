@@ -2,7 +2,7 @@
 
 Stable pointer for macOS Meeting SDK questions.
 
-Primary skill entrypoint:
+Start here:
 - [../macos/SKILL.md](../macos/SKILL.md)
 
 Common question patterns:

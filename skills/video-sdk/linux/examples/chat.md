@@ -6,5 +6,4 @@ Use chat when you need:
 - status updates
 - control channel for media pipelines
 
-This file exists to satisfy navigation links from `SKILL.md`.
-
+Use this pattern when chat acts as a lightweight control or status channel around your media workflow.

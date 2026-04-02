@@ -2,7 +2,7 @@
 
 ## Upgrade Strategy
 
-Use the repository-standard workflow:
+Use the standard upgrade workflow:
 - [../../general/references/sdk-upgrade-workflow.md](../../general/references/sdk-upgrade-workflow.md)
 
 For Rivet, treat upgrades as three parallel checks:

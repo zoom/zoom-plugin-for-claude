@@ -30,7 +30,7 @@ Use this skill when building Android apps with custom real-time video sessions.
 
 - Docs: https://developers.zoom.us/docs/video-sdk/android/
 - API reference: https://marketplacefront.zoom.us/sdk/custom/android/index.html
-- Parent skill: [../SKILL.md](../SKILL.md)
+- Broader guide: [../SKILL.md](../SKILL.md)
 
 ## Operations
 

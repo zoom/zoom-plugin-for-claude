@@ -19,7 +19,7 @@ Breakout rooms are a host-controlled feature. Even when the SDK UI supports brea
 - the meeting to have breakout rooms enabled
 - supported APIs for the view type you’re using
 
-## Where to Look in This Repo
+## Where to Look Next
 
 - Feature support table and Component View reference:
   - `meeting-sdk/web/component-view/SKILL.md`
@@ -35,4 +35,3 @@ Breakout rooms are a host-controlled feature. Even when the SDK UI supports brea
 2. If they need automation:
    - identify the exact SDK version and view
    - confirm whether the needed API exists for that view (don’t assume parity)
-

@@ -6,5 +6,4 @@ Use raw video capture when you need frames for:
 - computer vision
 - streaming to a third party
 
-This file exists to satisfy cross-links from concept docs and `SKILL.md`.
-
+Use this pattern when you need a minimal starting point for frame capture and downstream processing.

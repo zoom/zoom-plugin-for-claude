@@ -2,7 +2,7 @@
 
 This file provides a stable link target for Android Meeting SDK questions.
 
-Primary skill entrypoint:
+Start here:
 - [../android/SKILL.md](../android/SKILL.md)
 
 ## Common Forum Questions

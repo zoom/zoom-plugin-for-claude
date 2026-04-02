@@ -1,8 +1,8 @@
 # Meeting SDK (iOS) Pointers
 
-This repo focuses heavily on Web/Linux/Windows. This file exists to avoid dead links and to provide a consistent "where do I start" pointer for iOS Meeting SDK questions.
+Use this page as a quick starting point for iOS Meeting SDK questions before diving into the deeper iOS references.
 
-Primary skill entrypoint:
+Start here:
 - [../ios/SKILL.md](../ios/SKILL.md)
 
 ## Common Forum Questions

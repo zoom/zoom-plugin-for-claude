@@ -6,5 +6,4 @@ Typical pattern:
 - mux/encode as needed
 - push to RTMP/WebRTC destination
 
-This file exists to satisfy navigation links from `SKILL.md`.
-
+Use this pattern when you need to relay captured session media to an external live-streaming destination.

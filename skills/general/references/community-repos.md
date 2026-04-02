@@ -156,10 +156,3 @@ Curated list of official repositories from Zoom for development. Organized by pr
 | [probesdk-web](https://github.com/zoom/probesdk-web) | 3 | Test device/network/server connection |
 
 ---
-
-## Contributing
-
-Found a useful Zoom official repository missing from this list? Key criteria for inclusion:
-- Must be from [github.com/zoom](https://github.com/zoom)
-- Demonstrates Zoom SDK/API usage
-- Has working code (not just documentation)

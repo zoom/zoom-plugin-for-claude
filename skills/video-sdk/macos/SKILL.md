@@ -31,7 +31,7 @@ Use this skill when building custom macOS desktop video session apps.
 
 - Docs: https://developers.zoom.us/docs/video-sdk/macos/
 - API reference: https://marketplacefront.zoom.us/sdk/custom/macos/annotated.html
-- Parent skill: [../SKILL.md](../SKILL.md)
+- Broader guide: [../SKILL.md](../SKILL.md)
 
 ## Operations
 
