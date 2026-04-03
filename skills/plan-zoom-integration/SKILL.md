@@ -2,6 +2,7 @@
 name: plan-zoom-integration
 description: Turn a Zoom integration idea into an implementation plan with architecture, auth, and delivery milestones. Use when you need a practical build plan, phased delivery sequence, risk list, and next-step recommendation.
 argument-hint: "<what you want to build>"
+user-invocable: false
 ---
 
 # /plan-zoom-integration

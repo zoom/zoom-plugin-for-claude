@@ -19,8 +19,7 @@ Explicit slash workflows implemented as skills under `skills/`:
 
 | Workflow | Description |
 |---|---|
-| [`/plan-zoom-product`](skills/plan-zoom-product/SKILL.md) | Pick the right Zoom developer product or integration surface for a use case |
-| [`/plan-zoom-integration`](skills/plan-zoom-integration/SKILL.md) | Turn an idea into a Zoom architecture and delivery plan |
+| [`/start`](skills/start/SKILL.md) | Start with a Zoom app idea and get routed to the right product and build path |
 | [`/setup-zoom-oauth`](skills/setup-zoom-oauth/SKILL.md) | Choose the auth model, scopes, and redirect flow for a Zoom app |
 | [`/build-zoom-meeting-app`](skills/build-zoom-meeting-app/SKILL.md) | Build an embedded or managed Zoom meeting flow |
 | [`/build-zoom-bot`](skills/build-zoom-bot/SKILL.md) | Build bots, recorders, and real-time meeting processors |
@@ -41,6 +40,8 @@ Explicit slash workflows implemented as skills under `skills/`:
 These remain in the plugin as automatic routing helpers, but they are no longer part of the public slash-command surface:
 
 - [`start`](skills/start/SKILL.md)
+- [`plan-zoom-product`](skills/plan-zoom-product/SKILL.md)
+- [`plan-zoom-integration`](skills/plan-zoom-integration/SKILL.md)
 - [`choose-zoom-approach`](skills/choose-zoom-approach/SKILL.md)
 - [`design-mcp-workflow`](skills/design-mcp-workflow/SKILL.md)
 - [`debug-zoom-integration`](skills/debug-zoom-integration/SKILL.md)
@@ -60,16 +61,16 @@ The plugin also keeps the original Zoom product-specific reference library under
 
 ## Example Workflows
 
-### Choosing the right Zoom stack
+### Starting from a Zoom app idea
 
 ```text
-/plan-zoom-product Build an internal meeting assistant that joins calls, extracts action items, and stores summaries
+/start Build an internal meeting assistant that joins calls, extracts action items, and stores summaries
 ```
 
 ### Planning a new app
 
 ```text
-/plan-zoom-integration Build a React app that lets customers schedule and join Zoom meetings from our product
+/start Build a React app that lets customers schedule and join Zoom meetings from our product
 ```
 
 ### Debugging a broken webhook
