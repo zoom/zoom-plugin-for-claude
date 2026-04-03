@@ -1,7 +1,6 @@
 ---
-name: zoom-team-chat
+name: build-zoom-team-chat-app
 description: "Reference skill for Zoom Team Chat. Use after routing to a chat workflow when building user-scoped messaging integrations, chatbot experiences, rich cards, buttons, slash commands, or chat webhooks."
-user-invocable: false
 triggers:
   - "zoom team chat"
   - "zoom chatbot"
@@ -12,7 +11,7 @@ triggers:
   - "zoom chat integration"
 ---
 
-# Zoom Team Chat Development
+# /build-zoom-team-chat-app
 
 Background reference for Zoom Team Chat integrations. Use this after the workflow is clear, especially when the Team Chat API versus Chatbot API distinction matters.
 

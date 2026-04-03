@@ -89,8 +89,10 @@ sent to the wrong MCP surface.
 
 **Fix:**
 - Zoom MCP: `https://mcp-us.zoom.us/mcp/zoom/streamable`
+- Whiteboard MCP: `https://mcp-us.zoom.us/mcp/whiteboard/streamable`
 - re-run `tools/list`
 - use the current tool names exposed by that server
+- if the request is Whiteboard-specific, route to [../whiteboard/SKILL.md](../whiteboard/SKILL.md)
 
 ### MCP server not appearing in the client
 

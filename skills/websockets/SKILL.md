@@ -1,7 +1,6 @@
 ---
-name: zoom-websockets
+name: setup-zoom-websockets
 description: Reference skill for Zoom WebSockets. Use after routing to a low-latency event workflow when persistent connections, faster event delivery, or security constraints make WebSockets preferable to webhooks.
-user-invocable: false
 triggers:
   - "zoom websockets"
   - "websocket event subscription"
@@ -10,7 +9,7 @@ triggers:
   - "zoom websocket connection"
 ---
 
-# Zoom WebSockets
+# /setup-zoom-websockets
 
 Background reference for persistent Zoom event streams. Prefer workflow routing first, then use this file when WebSockets are plausibly better than webhooks.
 

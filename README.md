@@ -10,6 +10,7 @@ Before using the bundled MCP servers, export bearer tokens for the Zoom surfaces
 
 ```bash
 export ZOOM_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"
+export ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"
 ```
 
 ## Slash Workflows
@@ -18,24 +19,31 @@ Explicit slash workflows implemented as skills under `skills/`:
 
 | Workflow | Description |
 |---|---|
-| [`/choose-stack`](skills/choose-stack/SKILL.md) | Pick the right Zoom surface for a use case and explain the tradeoffs |
-| [`/app-plan`](skills/app-plan/SKILL.md) | Turn an idea into a Zoom architecture and delivery plan |
-| [`/debug-integration`](skills/debug-integration/SKILL.md) | Triage a broken Zoom integration and isolate the failing layer |
-| [`/mcp-setup`](skills/mcp-setup/SKILL.md) | Decide when Zoom MCP fits and plan a safe Claude workflow |
+| [`/which-zoom-product`](skills/which-zoom-product/SKILL.md) | Pick the right Zoom developer product or integration surface for a use case |
+| [`/build-zoom-plan`](skills/build-zoom-plan/SKILL.md) | Turn an idea into a Zoom architecture and delivery plan |
+| [`/setup-zoom-oauth`](skills/setup-zoom-oauth/SKILL.md) | Choose the auth model, scopes, and redirect flow for a Zoom app |
+| [`/build-zoom-meeting-app`](skills/build-zoom-meeting-app/SKILL.md) | Build an embedded or managed Zoom meeting flow |
+| [`/build-zoom-bot`](skills/build-zoom-bot/SKILL.md) | Build bots, recorders, and real-time meeting processors |
+| [`/debug-zoom`](skills/debug-zoom/SKILL.md) | Triage a broken Zoom integration and isolate the failing layer |
+| [`/setup-zoom-mcp`](skills/setup-zoom-mcp/SKILL.md) | Decide when Zoom MCP fits and set up a safe Claude workflow |
+| [`/build-zoom-rest-api-app`](skills/rest-api/SKILL.md) | Route into Zoom REST endpoints, scopes, and resource patterns |
+| [`/build-zoom-meeting-sdk-app`](skills/meeting-sdk/SKILL.md) | Route into embedded Zoom meeting implementation details |
+| [`/build-zoom-video-sdk-app`](skills/video-sdk/SKILL.md) | Route into custom video-session implementation details |
+| [`/setup-zoom-webhooks`](skills/webhooks/SKILL.md) | Set up Zoom webhook subscriptions, signature verification, and handlers |
+| [`/setup-zoom-websockets`](skills/websockets/SKILL.md) | Set up Zoom WebSocket event delivery when it fits better than webhooks |
+| [`/build-zoom-team-chat-app`](skills/team-chat/SKILL.md) | Build Team Chat user or chatbot integrations |
+| [`/build-zoom-phone-integration`](skills/phone/SKILL.md) | Build Zoom Phone integrations around Smart Embed, APIs, and events |
+| [`/build-zoom-contact-center-app`](skills/contact-center/SKILL.md) | Build Contact Center app, web, or native integrations |
+| [`/build-zoom-virtual-agent`](skills/virtual-agent/SKILL.md) | Build Virtual Agent web or mobile wrapper integrations |
 
-## Skills
+## Internal Routing Skills
 
-Workflow-oriented skills Claude should pull in automatically when relevant:
+These remain in the plugin as automatic routing helpers, but they are no longer part of the public slash-command surface:
 
-| Skill | Description |
-|---|---|
-| [`start`](skills/start/SKILL.md) | Default router for new Zoom work |
-| [`choose-zoom-approach`](skills/choose-zoom-approach/SKILL.md) | Decide between REST API, SDKs, webhooks, apps, or MCP |
-| [`implement-oauth`](skills/implement-oauth/SKILL.md) | Choose the auth model and implement it correctly |
-| [`build-meeting-integration`](skills/build-meeting-integration/SKILL.md) | Build an embedded or managed Zoom meeting flow |
-| [`build-meeting-bot`](skills/build-meeting-bot/SKILL.md) | Build bots, recorders, and real-time meeting processors |
-| [`design-mcp-workflow`](skills/design-mcp-workflow/SKILL.md) | Plan Zoom MCP workflows for Claude |
-| [`debug-zoom-integration`](skills/debug-zoom-integration/SKILL.md) | Debug auth, API, SDK, webhook, RTMS, or MCP failures |
+- [`start`](skills/start/SKILL.md)
+- [`choose-zoom-approach`](skills/choose-zoom-approach/SKILL.md)
+- [`design-mcp-workflow`](skills/design-mcp-workflow/SKILL.md)
+- [`debug-zoom-integration`](skills/debug-zoom-integration/SKILL.md)
 
 ## Deep References
 
@@ -55,30 +63,30 @@ The plugin also keeps the original Zoom product-specific reference library under
 ### Choosing the right Zoom stack
 
 ```text
-/choose-stack Build an internal meeting assistant that joins calls, extracts action items, and stores summaries
+/which-zoom-product Build an internal meeting assistant that joins calls, extracts action items, and stores summaries
 ```
 
 ### Planning a new app
 
 ```text
-/app-plan Build a React app that lets customers schedule and join Zoom meetings from our product
+/build-zoom-plan Build a React app that lets customers schedule and join Zoom meetings from our product
 ```
 
 ### Debugging a broken webhook
 
 ```text
-/debug-integration My Zoom webhook signature verification fails in production but not locally
+/debug-zoom My Zoom webhook signature verification fails in production but not locally
 ```
 
 ### Designing an MCP flow
 
 ```text
-/mcp-setup I want Claude to search meetings, pull recording resources, and create follow-up docs
+/setup-zoom-mcp I want Claude to search meetings, pull recording resources, and create follow-up docs
 ```
 
 ## Connectors
 
-See [CONNECTORS.md](CONNECTORS.md). The plugin works standalone from the bundled skills, and gets supercharged when Claude can use the bundled Zoom MCP server from [`.mcp.json`](.mcp.json).
+See [CONNECTORS.md](CONNECTORS.md). The plugin works standalone from the bundled skills, and gets supercharged when Claude can use the bundled Zoom MCP servers from [`.mcp.json`](.mcp.json).
 
 ## Cross-Platform Notes
 
@@ -92,15 +100,15 @@ Zoom Plugin for Claude/
 ├── .mcp.json
 ├── CONNECTORS.md
 ├── skills/
-│   ├── choose-stack/
-│   ├── app-plan/
-│   ├── debug-integration/
-│   ├── mcp-setup/
+│   ├── which-zoom-product/
+│   ├── build-zoom-plan/
+│   ├── debug-zoom/
+│   ├── setup-zoom-mcp/
 │   ├── start/
 │   ├── choose-zoom-approach/
-│   ├── implement-oauth/
-│   ├── build-meeting-integration/
-│   ├── build-meeting-bot/
+│   ├── setup-zoom-oauth/
+│   ├── build-zoom-meeting-app/
+│   ├── build-zoom-bot/
 │   ├── design-mcp-workflow/
 │   ├── debug-zoom-integration/
 │   └── ... existing Zoom reference skills

@@ -1,6 +1,7 @@
 ---
 name: debug-zoom-integration
 description: Debug broken Zoom implementations quickly. Use when auth, webhooks, SDK joins, MCP transport, or real-time media workflows are failing and you need to isolate the layer before proposing a fix.
+user-invocable: false
 ---
 
 # Debug Zoom Integration

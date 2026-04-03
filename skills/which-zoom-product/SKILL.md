@@ -1,10 +1,10 @@
 ---
-name: choose-stack
+name: which-zoom-product
 description: Choose the right Zoom building surface for a use case and explain the tradeoffs clearly. Use when deciding between REST API, Webhooks, WebSockets, Meeting SDK, Video SDK, Zoom Apps SDK, Phone, Contact Center, or MCP for a specific product idea or integration goal.
 argument-hint: "<product idea, app type, or integration goal>"
 ---
 
-# /choose-stack
+# /which-zoom-product
 
 > If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
 
@@ -13,7 +13,7 @@ Choose between Zoom REST API, Webhooks, WebSockets, Meeting SDK, Video SDK, Zoom
 ## Usage
 
 ```text
-/choose-stack $ARGUMENTS
+/which-zoom-product $ARGUMENTS
 ```
 
 ## Workflow

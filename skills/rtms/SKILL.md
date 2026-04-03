@@ -23,7 +23,7 @@ triggers:
 
 # Zoom Realtime Media Streams (RTMS)
 
-Background reference for live Zoom media pipelines. Prefer `build-meeting-bot` first, then use this skill for stream types, capabilities, and RTMS-specific implementation constraints.
+Background reference for live Zoom media pipelines. Prefer `build-zoom-bot` first, then use this skill for stream types, capabilities, and RTMS-specific implementation constraints.
 
 # Zoom Realtime Media Streams (RTMS)
 

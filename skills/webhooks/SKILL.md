@@ -1,7 +1,6 @@
 ---
-name: zoom-webhooks
+name: setup-zoom-webhooks
 description: Reference skill for Zoom webhooks. Use after routing to an event-driven workflow when implementing subscriptions, signature verification, delivery handling, retries, or event-type selection.
-user-invocable: false
 triggers:
   - "zoom webhook"
   - "webhook signature"
@@ -10,7 +9,7 @@ triggers:
   - "recording completed webhook"
 ---
 
-# Zoom Webhooks
+# /setup-zoom-webhooks
 
 Background reference for Zoom event delivery over HTTP. Prefer workflow skills first, then use this file for verification, subscription, and delivery details.
 

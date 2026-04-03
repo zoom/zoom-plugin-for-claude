@@ -16,6 +16,7 @@ export type SkillId =
   | 'zoom-general'
   | 'zoom-rest-api'
   | 'zoom-mcp'
+  | 'zoom-mcp/whiteboard'
   | 'zoom-webhooks'
   | 'zoom-websockets'
   | 'zoom-meeting-sdk'
@@ -50,6 +51,7 @@ interface Signals {
   customVideo: boolean;
   restApi: boolean;
   mcp: boolean;
+  whiteboardMcp: boolean;
   webhooks: boolean;
   websockets: boolean;
   zoomApps: boolean;
@@ -84,6 +86,7 @@ export function detectSignals(rawQuery: string): Signals {
     customVideo: hasAny(q, ['video sdk', 'custom video', 'attachvideo', 'peer-video-state-change']),
     restApi: hasAny(q, ['rest api', 'api create meeting', 'api list meetings', '/v2/', 'list users', 's2s oauth', 'meeting endpoint']),
     mcp: hasAny(q, ['zoom mcp', 'mcp server', 'agentic retrieval', 'tools/list', 'tools/call', 'semantic meeting search']),
+    whiteboardMcp: hasAny(q, ['whiteboard mcp', 'zoom whiteboard mcp', 'list whiteboards', 'get a whiteboard', 'wb/db', 'whiteboard_id']),
     webhooks: hasAny(q, ['webhook', 'x-zm-signature', 'event subscription', 'crc']),
     websockets: hasAny(q, ['websocket', 'real-time events', 'persistent connection']),
     zoomApps: hasAny(q, ['zoom apps sdk', 'in-client app', 'layers api', 'collaborate mode']),
@@ -119,6 +122,7 @@ function pickPrimarySkill(s: Signals): SkillId {
   if (s.preflight) return 'probe-sdk';
   if (s.websockets) return 'zoom-websockets';
   if (s.webhooks) return 'zoom-webhooks';
+  if (s.whiteboardMcp) return 'zoom-mcp/whiteboard';
   if (s.mcp) return 'zoom-mcp';
   if (s.restApi) return 'zoom-rest-api';
   if (s.oauth) return 'zoom-oauth';

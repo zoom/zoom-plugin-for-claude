@@ -1,6 +1,6 @@
 ---
 name: zoom-mcp
-description: Guidance for the bundled Zoom MCP connector. Use after routing to an MCP workflow when planning or troubleshooting tool-based access to meetings, recordings, meeting assets, transcripts, or Zoom Docs.
+description: Guidance for the bundled Zoom MCP connector. Use after routing to an MCP workflow when planning or troubleshooting tool-based access to meetings, recordings, meeting assets, transcripts, or Zoom Docs. Route Whiteboard-specific MCP requests to `zoom-mcp/whiteboard`.
 user-invocable: false
 triggers:
   - "zoom mcp"
@@ -21,7 +21,7 @@ triggers:
 
 # Zoom MCP
 
-Guidance for the bundled Zoom MCP connector in this Claude plugin. Prefer `design-mcp-workflow` or [mcp-setup](../mcp-setup/SKILL.md) first, then route here for tool-surface details, auth expectations, and MCP-specific constraints.
+Guidance for the bundled Zoom MCP connector in this Claude plugin. Prefer `design-mcp-workflow` or [setup-zoom-mcp](../setup-zoom-mcp/SKILL.md) first, then route here for tool-surface details, auth expectations, and MCP-specific constraints.
 
 # Zoom MCP Server
 
@@ -42,6 +42,9 @@ Current tool names from the Zoom MCP server:
 
 Some MCP clients namespace server tools in the UI, for example `zoom-mcp:recordings_list`.
 Treat the raw tool names above as authoritative.
+
+Whiteboard-specific MCP work is covered by the dedicated skill
+[whiteboard/SKILL.md](whiteboard/SKILL.md).
 
 ## Quick Start
 
@@ -96,7 +99,12 @@ Semantic meeting search, meeting assets, and recording-content retrieval depend 
 features such as **Smart Recording** and **Meeting Summary** for useful results. These feature
 settings do not replace the required OAuth scopes.
 
-**4. Use REST for deterministic meeting CRUD**
+**4. Whiteboard is a separate MCP surface**
+
+The Zoom MCP endpoint and the Whiteboard MCP endpoint are separate. Route Whiteboard-specific
+requests to [whiteboard/SKILL.md](whiteboard/SKILL.md).
+
+**5. Use REST for deterministic meeting CRUD**
 
 The current Zoom MCP tool surface does not expose deterministic
 meeting create, update, or delete tools. If the user needs explicit meeting CRUD operations,
@@ -108,6 +116,9 @@ route to [../rest-api/SKILL.md](../rest-api/SKILL.md).
 |-----------|-----|
 | Streamable HTTP (recommended) | `https://mcp-us.zoom.us/mcp/zoom/streamable` |
 | SSE (fallback) | `https://mcp-us.zoom.us/mcp/zoom/sse` |
+
+Dedicated Whiteboard MCP skill:
+- [whiteboard/SKILL.md](whiteboard/SKILL.md)
 
 ## Search and Retrieval Model
 
@@ -191,6 +202,7 @@ Full error reference: [references/error-codes.md](references/error-codes.md)
 ### References
 - [references/tools.md](references/tools.md) — Current Zoom MCP tool reference
 - [references/error-codes.md](references/error-codes.md) — MCP and Zoom API errors with fixes
+- [whiteboard/SKILL.md](whiteboard/SKILL.md) — Dedicated Whiteboard MCP skill
 
 ### Troubleshooting
 - [troubleshooting/common-errors.md](troubleshooting/common-errors.md) — Scope failures, endpoint mixups, search/recording issues

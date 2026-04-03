@@ -1,6 +1,7 @@
 ---
 name: start
 description: Start here for any Zoom integration or app idea. Use when you need to choose the right Zoom surface, shape the architecture, or route into the correct implementation skill without reading the whole Zoom doc set first.
+user-invocable: false
 ---
 
 # Start
@@ -18,12 +19,12 @@ Use this as the default entry skill for the plugin.
 
 | If the user wants to... | Route to |
 |---|---|
-| Choose the right Zoom surface for a new project | [choose-zoom-approach](../choose-zoom-approach/SKILL.md) |
-| Set up OAuth, tokens, scopes, or app credentials | [implement-oauth](../implement-oauth/SKILL.md) |
-| Embed or customize a Zoom meeting flow | [build-meeting-integration](../build-meeting-integration/SKILL.md) |
-| Build a bot, recorder, or real-time meeting processor | [build-meeting-bot](../build-meeting-bot/SKILL.md) |
-| Use Zoom-hosted MCP for AI workflows | [design-mcp-workflow](../design-mcp-workflow/SKILL.md) |
-| Debug a broken integration | [debug-zoom-integration](../debug-zoom-integration/SKILL.md) |
+| Choose the right Zoom surface for a new project | [which-zoom-product](../which-zoom-product/SKILL.md) |
+| Set up OAuth, tokens, scopes, or app credentials | [setup-zoom-oauth](../setup-zoom-oauth/SKILL.md) |
+| Embed or customize a Zoom meeting flow | [build-zoom-meeting-app](../build-zoom-meeting-app/SKILL.md) |
+| Build a bot, recorder, or real-time meeting processor | [build-zoom-bot](../build-zoom-bot/SKILL.md) |
+| Use Zoom-hosted MCP for AI workflows | [setup-zoom-mcp](../setup-zoom-mcp/SKILL.md) |
+| Debug a broken integration | [debug-zoom](../debug-zoom/SKILL.md) |
 
 ## Supporting Zoom References
 

@@ -1,7 +1,6 @@
 ---
-name: zoom-rest-api
+name: build-zoom-rest-api-app
 description: "Reference skill for Zoom REST API. Use after choosing an API-based workflow when you need endpoint selection, resource-management patterns, OAuth requirements, rate-limit awareness, or API error debugging."
-user-invocable: false
 triggers:
   - "api call"
   - "rest api"
@@ -29,9 +28,9 @@ triggers:
   - "download_url"
 ---
 
-# Zoom REST API
+# /build-zoom-rest-api-app
 
-Background reference for deterministic server-side Zoom automation and resource management. Prefer `choose-zoom-approach`, `app-plan`, or `debug-zoom-integration` first, then route here for endpoint-level detail.
+Background reference for deterministic server-side Zoom automation and resource management. Prefer `which-zoom-product`, `build-zoom-plan`, or `debug-zoom` first, then route here for endpoint-level detail.
 
 # Zoom REST API
 

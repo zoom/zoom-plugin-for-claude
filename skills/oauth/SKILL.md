@@ -22,7 +22,7 @@ triggers:
 
 # Zoom OAuth
 
-Background reference for Zoom auth and token lifecycle behavior. Prefer `implement-oauth` first, then use this skill for the exact flow, scope, and error details.
+Background reference for Zoom auth and token lifecycle behavior. Prefer `setup-zoom-oauth` first, then use this skill for the exact flow, scope, and error details.
 
 # Zoom OAuth
 

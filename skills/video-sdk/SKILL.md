@@ -1,7 +1,6 @@
 ---
-name: zoom-video-sdk
+name: build-zoom-video-sdk-app
 description: Reference skill for Zoom Video SDK. Use after routing to a custom-session workflow when the user needs full control over the video experience rather than an actual Zoom meeting.
-user-invocable: false
 triggers:
   - "custom video"
   - "video sdk"
@@ -19,9 +18,9 @@ triggers:
   - "native video sdk"
 ---
 
-# Zoom Video SDK
+# /build-zoom-video-sdk-app
 
-Background reference for fully custom video-session products. Prefer `choose-zoom-approach` first when the boundary between Meeting SDK and Video SDK is still unclear.
+Background reference for fully custom video-session products. Prefer `which-zoom-product` first when the boundary between Meeting SDK and Video SDK is still unclear.
 
 Build custom video experiences powered by Zoom's infrastructure.
 

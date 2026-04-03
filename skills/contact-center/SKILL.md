@@ -1,7 +1,6 @@
 ---
-name: contact-center
+name: build-zoom-contact-center-app
 description: "Reference skill for Zoom Contact Center. Use after routing to a contact-center workflow when implementing app, web, or native integrations; engagement context and state handling; campaigns; callbacks; or version-drift troubleshooting."
-user-invocable: false
 triggers:
   - "contact center sdk"
   - "zoom contact center"
@@ -15,7 +14,7 @@ triggers:
   - "zoom contact center app"
 ---
 
-# Zoom Contact Center
+# /build-zoom-contact-center-app
 
 Background reference for Zoom Contact Center integrations across app, web, and native mobile surfaces.
 

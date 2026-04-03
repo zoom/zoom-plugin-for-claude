@@ -1,10 +1,10 @@
 ---
-name: app-plan
+name: build-zoom-plan
 description: Turn a Zoom integration idea into an implementation plan with architecture, auth, and delivery milestones. Use when you need a practical build plan, phased delivery sequence, risk list, and next-step recommendation.
 argument-hint: "<what you want to build>"
 ---
 
-# /app-plan
+# /build-zoom-plan
 
 > If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
 
@@ -13,7 +13,7 @@ Create a practical build plan for a Zoom integration or app.
 ## Usage
 
 ```text
-/app-plan $ARGUMENTS
+/build-zoom-plan $ARGUMENTS
 ```
 
 ## Workflow
@@ -36,6 +36,6 @@ Create a practical build plan for a Zoom integration or app.
 ## Related Skills
 
 - [start](../start/SKILL.md)
-- [implement-oauth](../implement-oauth/SKILL.md)
-- [build-meeting-integration](../build-meeting-integration/SKILL.md)
-- [build-meeting-bot](../build-meeting-bot/SKILL.md)
+- [setup-zoom-oauth](../setup-zoom-oauth/SKILL.md)
+- [build-zoom-meeting-app](../build-zoom-meeting-app/SKILL.md)
+- [build-zoom-bot](../build-zoom-bot/SKILL.md)

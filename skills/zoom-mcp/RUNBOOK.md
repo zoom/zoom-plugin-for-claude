@@ -25,6 +25,8 @@ Minimum Zoom MCP scopes for this guide:
 - `cloud_recording:read:content` — read recording content scope
 - `docs:write:import` — Create new file by import
 
+Whiteboard uses a separate scope set. See [whiteboard/SKILL.md](whiteboard/SKILL.md).
+
 **4. AI Companion features enabled?**
 
 Go to Zoom web portal → **Admin → Account Management → Account Settings → AI Companion**.

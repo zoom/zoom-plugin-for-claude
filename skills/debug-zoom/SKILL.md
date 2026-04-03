@@ -1,10 +1,10 @@
 ---
-name: debug-integration
+name: debug-zoom
 description: Debug a broken Zoom integration by isolating the failure point and routing into the right Zoom references. Use when auth, API, webhook, SDK, or MCP behavior is failing and you need a ranked hypothesis list plus verification steps.
 argument-hint: "<symptoms, error, or failing flow>"
 ---
 
-# /debug-integration
+# /debug-zoom
 
 > If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
 
@@ -13,7 +13,7 @@ Debug Zoom auth, API, webhook, SDK, or MCP issues without wandering through the 
 ## Usage
 
 ```text
-/debug-integration $ARGUMENTS
+/debug-zoom $ARGUMENTS
 ```
 
 ## Workflow
@@ -35,5 +35,5 @@ Debug Zoom auth, API, webhook, SDK, or MCP issues without wandering through the 
 ## Related Skills
 
 - [debug-zoom-integration](../debug-zoom-integration/SKILL.md)
-- [implement-oauth](../implement-oauth/SKILL.md)
+- [setup-zoom-oauth](../setup-zoom-oauth/SKILL.md)
 - [design-mcp-workflow](../design-mcp-workflow/SKILL.md)

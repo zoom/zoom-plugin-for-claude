@@ -105,6 +105,8 @@ Minimum recommendation for the main Zoom MCP connector:
 - use user-level OAuth
 - include all five scopes above on the same app
 
+Whiteboard MCP uses a separate scope set. See [../whiteboard/SKILL.md](../whiteboard/SKILL.md).
+
 ## Step 3: Authorize and Exchange for Tokens
 
 1. Construct the authorization URL:

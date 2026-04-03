@@ -14,6 +14,16 @@ sources. Zoom exposes hosted MCP surfaces that clients can discover and call ove
 | Streamable HTTP (recommended) | `https://mcp-us.zoom.us/mcp/zoom/streamable` |
 | SSE (fallback) | `https://mcp-us.zoom.us/mcp/zoom/sse` |
 
+### Whiteboard MCP
+
+| Transport | URL |
+|-----------|-----|
+| Streamable HTTP (recommended) | `https://mcp-us.zoom.us/mcp/whiteboard/streamable` |
+| SSE (fallback) | `https://mcp-us.zoom.us/mcp/whiteboard/sse` |
+
+Whiteboard MCP is covered by the dedicated skill
+[../whiteboard/SKILL.md](../whiteboard/SKILL.md).
+
 ## Discovery Model
 
 Do not hardcode tool counts in client logic.
@@ -56,6 +66,11 @@ Zoom MCP protected-resource metadata currently exposes:
 - `meeting:read:search`
 - `cloud_recording:read:content`
 - `cloud_recording:read:list_user_recordings`
+
+Whiteboard MCP protected-resource metadata currently exposes:
+- `whiteboard:write:whiteboard`
+- `whiteboard:read:list_whiteboards`
+- `whiteboard:read:whiteboard`
 
 ## Retrieval Model
 

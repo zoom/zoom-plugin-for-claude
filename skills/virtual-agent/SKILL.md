@@ -1,7 +1,6 @@
 ---
-name: virtual-agent
+name: build-zoom-virtual-agent
 description: "Reference skill for Zoom Virtual Agent. Use after routing to a virtual-agent workflow when implementing web embeds, Android or iOS wrapper integrations, knowledge-base sync, lifecycle handling, or troubleshooting."
-user-invocable: false
 triggers:
   - "virtual agent"
   - "zva"
@@ -9,7 +8,7 @@ triggers:
   - "knowledge base sync"
 ---
 
-# Zoom Virtual Agent
+# /build-zoom-virtual-agent
 
 Background reference for Zoom Virtual Agent across:
 - Web campaign/chat embeds.

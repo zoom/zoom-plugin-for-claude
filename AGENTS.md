@@ -10,15 +10,19 @@ Primary capabilities:
 - choose the right Zoom surface for a use case
 - plan Zoom integrations across REST APIs, SDKs, webhooks, OAuth, and MCP
 - debug broken Zoom integrations
+- build focused Zoom implementations for meetings, bots, chat, phone, contact center, and virtual agent workflows
 - provide deep product-specific reference material under `skills/`
 
 ## Primary Entry Skills
 
 - `skills/start/SKILL.md` — default routing entry point
-- `skills/choose-stack/SKILL.md` — pick the right Zoom surface
-- `skills/app-plan/SKILL.md` — turn an idea into an implementation plan
-- `skills/debug-integration/SKILL.md` — isolate the failing integration layer
-- `skills/mcp-setup/SKILL.md` — plan a Zoom MCP workflow for Claude
+- `skills/which-zoom-product/SKILL.md` — pick the right Zoom developer product
+- `skills/build-zoom-plan/SKILL.md` — turn an idea into an implementation plan
+- `skills/setup-zoom-oauth/SKILL.md` — choose the auth model and redirect flow
+- `skills/build-zoom-meeting-app/SKILL.md` — implement an embedded or managed meeting app
+- `skills/build-zoom-bot/SKILL.md` — implement a meeting bot or recorder
+- `skills/debug-zoom/SKILL.md` — isolate the failing integration layer
+- `skills/setup-zoom-mcp/SKILL.md` — plan a Zoom MCP workflow for Claude
 
 ## Repo Shape
 

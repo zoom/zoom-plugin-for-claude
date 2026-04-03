@@ -1,7 +1,6 @@
 ---
-name: phone
+name: build-zoom-phone-integration
 description: "Reference skill for Zoom Phone. Use after routing to a phone workflow when implementing OAuth, Phone APIs, webhooks, Smart Embed events, URI schemes, CRM or CTI dialers, or call handling automation."
-user-invocable: false
 triggers:
   - "zoom phone"
   - "phone smart embed"
@@ -15,7 +14,7 @@ triggers:
   - "call element"
 ---
 
-# Zoom Phone
+# /build-zoom-phone-integration
 
 Background reference for Zoom Phone integrations across API, webhook, Smart Embed, and URI-launch workflows.
 
