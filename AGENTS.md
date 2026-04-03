@@ -1,4 +1,4 @@
-# Plugin for Claude
+# Zoom Plugin for Claude
 
 Cross-platform discovery file for agent tools that look for `AGENTS.md`.
 

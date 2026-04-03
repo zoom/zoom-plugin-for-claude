@@ -1,4 +1,4 @@
-# Plugin for Claude
+# Zoom Plugin for Claude
 
 A Claude plugin for planning, building, and debugging Zoom integrations. It helps choose the right Zoom surface, shape implementations, debug failures, and route into the right Zoom references without making the user read the whole doc tree first.
 
@@ -87,7 +87,7 @@ This repo is packaged first as a Claude plugin, but it also includes [AGENTS.md]
 ## Structure
 
 ```text
-Plugin for Claude/
+Zoom Plugin for Claude/
 ├── .claude-plugin/plugin.json
 ├── .mcp.json
 ├── CONNECTORS.md
