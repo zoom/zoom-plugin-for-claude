@@ -16,8 +16,8 @@ Primary capabilities:
 ## Primary Entry Skills
 
 - `skills/start/SKILL.md` — default routing entry point
-- `skills/which-zoom-product/SKILL.md` — pick the right Zoom developer product
-- `skills/build-zoom-plan/SKILL.md` — turn an idea into an implementation plan
+- `skills/plan-zoom-product/SKILL.md` — pick the right Zoom developer product
+- `skills/plan-zoom-integration/SKILL.md` — turn an idea into an implementation plan
 - `skills/setup-zoom-oauth/SKILL.md` — choose the auth model and redirect flow
 - `skills/build-zoom-meeting-app/SKILL.md` — implement an embedded or managed meeting app
 - `skills/build-zoom-bot/SKILL.md` — implement a meeting bot or recorder

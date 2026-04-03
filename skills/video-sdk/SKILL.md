@@ -20,7 +20,7 @@ triggers:
 
 # /build-zoom-video-sdk-app
 
-Background reference for fully custom video-session products. Prefer `which-zoom-product` first when the boundary between Meeting SDK and Video SDK is still unclear.
+Background reference for fully custom video-session products. Prefer `plan-zoom-product` first when the boundary between Meeting SDK and Video SDK is still unclear.
 
 Build custom video experiences powered by Zoom's infrastructure.
 

@@ -22,8 +22,8 @@ This plan intentionally prioritizes **development workflows** over:
 
 - The top-level workflow skills are directionally correct:
   - `skills/start/SKILL.md`
-  - `skills/which-zoom-product/SKILL.md`
-  - `skills/build-zoom-plan/SKILL.md`
+  - `skills/plan-zoom-product/SKILL.md`
+  - `skills/plan-zoom-integration/SKILL.md`
   - `skills/setup-zoom-oauth/SKILL.md`
   - `skills/build-zoom-meeting-app/SKILL.md`
   - `skills/build-zoom-bot/SKILL.md`
@@ -96,7 +96,7 @@ Make the plugin consistently route Claude into build-oriented outcomes.
   - first files to create
   - implementation sequence
   - known risks
-- Make `start`, `which-zoom-product`, and `build-zoom-plan` more explicit about when to stop routing and start building.
+- Make `start`, `plan-zoom-product`, and `plan-zoom-integration` more explicit about when to stop routing and start building.
 - Add stronger "do not use X when Y is needed" language where ambiguity is common:
   - Meeting SDK vs Video SDK
   - REST API vs MCP

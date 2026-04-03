@@ -30,7 +30,7 @@ triggers:
 
 # /build-zoom-rest-api-app
 
-Background reference for deterministic server-side Zoom automation and resource management. Prefer `which-zoom-product`, `build-zoom-plan`, or `debug-zoom` first, then route here for endpoint-level detail.
+Background reference for deterministic server-side Zoom automation and resource management. Prefer `plan-zoom-product`, `plan-zoom-integration`, or `debug-zoom` first, then route here for endpoint-level detail.
 
 # Zoom REST API
 

@@ -19,8 +19,8 @@ Explicit slash workflows implemented as skills under `skills/`:
 
 | Workflow | Description |
 |---|---|
-| [`/which-zoom-product`](skills/which-zoom-product/SKILL.md) | Pick the right Zoom developer product or integration surface for a use case |
-| [`/build-zoom-plan`](skills/build-zoom-plan/SKILL.md) | Turn an idea into a Zoom architecture and delivery plan |
+| [`/plan-zoom-product`](skills/plan-zoom-product/SKILL.md) | Pick the right Zoom developer product or integration surface for a use case |
+| [`/plan-zoom-integration`](skills/plan-zoom-integration/SKILL.md) | Turn an idea into a Zoom architecture and delivery plan |
 | [`/setup-zoom-oauth`](skills/setup-zoom-oauth/SKILL.md) | Choose the auth model, scopes, and redirect flow for a Zoom app |
 | [`/build-zoom-meeting-app`](skills/build-zoom-meeting-app/SKILL.md) | Build an embedded or managed Zoom meeting flow |
 | [`/build-zoom-bot`](skills/build-zoom-bot/SKILL.md) | Build bots, recorders, and real-time meeting processors |
@@ -63,13 +63,13 @@ The plugin also keeps the original Zoom product-specific reference library under
 ### Choosing the right Zoom stack
 
 ```text
-/which-zoom-product Build an internal meeting assistant that joins calls, extracts action items, and stores summaries
+/plan-zoom-product Build an internal meeting assistant that joins calls, extracts action items, and stores summaries
 ```
 
 ### Planning a new app
 
 ```text
-/build-zoom-plan Build a React app that lets customers schedule and join Zoom meetings from our product
+/plan-zoom-integration Build a React app that lets customers schedule and join Zoom meetings from our product
 ```
 
 ### Debugging a broken webhook
@@ -100,8 +100,8 @@ Zoom Plugin for Claude/
 ├── .mcp.json
 ├── CONNECTORS.md
 ├── skills/
-│   ├── which-zoom-product/
-│   ├── build-zoom-plan/
+│   ├── plan-zoom-product/
+│   ├── plan-zoom-integration/
 │   ├── debug-zoom/
 │   ├── setup-zoom-mcp/
 │   ├── start/

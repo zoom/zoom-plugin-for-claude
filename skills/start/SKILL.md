@@ -19,7 +19,7 @@ Use this as the default entry skill for the plugin.
 
 | If the user wants to... | Route to |
 |---|---|
-| Choose the right Zoom surface for a new project | [which-zoom-product](../which-zoom-product/SKILL.md) |
+| Choose the right Zoom surface for a new project | [plan-zoom-product](../plan-zoom-product/SKILL.md) |
 | Set up OAuth, tokens, scopes, or app credentials | [setup-zoom-oauth](../setup-zoom-oauth/SKILL.md) |
 | Embed or customize a Zoom meeting flow | [build-zoom-meeting-app](../build-zoom-meeting-app/SKILL.md) |
 | Build a bot, recorder, or real-time meeting processor | [build-zoom-bot](../build-zoom-bot/SKILL.md) |
