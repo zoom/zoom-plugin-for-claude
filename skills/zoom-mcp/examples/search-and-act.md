@@ -60,7 +60,10 @@ get_meeting_assets
   meetingId: "MEETING_ID_OR_UUID"
 
 Step 3:
-create_new_file_with_markdown
+switch to the dedicated zoom-docs-mcp server
+
+Step 4:
+create_file_with_content
   file_name: "Q1 Planning Summary"
   content: "# Decisions\n\n- ..."
 ```

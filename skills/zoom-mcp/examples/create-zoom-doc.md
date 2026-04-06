@@ -1,7 +1,7 @@
 # Create a Zoom Doc
 
-The current Zoom MCP tool surface includes `create_new_file_with_markdown` for
-creating a Zoom Docs document from Markdown content.
+Use the dedicated `zoom-docs-mcp` server for Zoom Docs creation and retrieval.
+The official documented docs tools are `create_file_with_content` and `get_file_content`.
 
 ## Required Scope
 
@@ -28,7 +28,7 @@ get_meeting_assets
 ### Step 2: Create the Zoom Doc
 
 ```text
-create_new_file_with_markdown
+create_file_with_content
   file_name: "Q1 Planning — Action Items"
   content: "# Action Items\n\n- Owner: ..."
 ```

@@ -34,4 +34,5 @@ Use this skill when auth is the blocker or when auth choices will shape the enti
 - Picking a grant before clarifying the actor and tenant model
 - Asking for broad scopes before confirming the exact workflow
 - Forgetting refresh-token behavior and token lifecycle handling
+- Reusing an old refresh token after a successful refresh instead of storing the newly returned one
 - Treating auth failures as API failures without checking app configuration first

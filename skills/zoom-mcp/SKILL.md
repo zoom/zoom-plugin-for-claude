@@ -1,6 +1,6 @@
 ---
 name: zoom-mcp
-description: Guidance for the bundled Zoom MCP connector. Use after routing to an MCP workflow when planning or troubleshooting tool-based access to meetings, recordings, meeting assets, transcripts, or Zoom Docs. Route Whiteboard-specific MCP requests to `zoom-mcp/whiteboard`.
+description: Guidance for the bundled Zoom MCP connectors. Use after routing to an MCP workflow when planning or troubleshooting tool-based access to meetings, recordings, meeting assets, or transcripts. Route Zoom Docs requests to the dedicated Docs MCP server and Whiteboard-specific requests to `zoom-mcp/whiteboard`.
 user-invocable: false
 triggers:
   - "zoom mcp"
@@ -30,11 +30,14 @@ This plugin bundles Zoom's hosted MCP server at `mcp-us.zoom.us` for AI-agent ac
 - semantic meeting search
 - meeting-linked asset retrieval
 - recording resource retrieval
-- Zoom Docs creation from Markdown
 
-Current tool names from the Zoom MCP server:
+Zoom Docs are exposed through a separate bundled server:
 
-- `create_new_file_with_markdown`
+- `zoom-docs-mcp` at `mcp.zoom.us`
+- purpose-built for Zoom Docs creation and retrieval
+
+Current tool names from the main Zoom MCP server:
+
 - `get_meeting_assets`
 - `search_meetings`
 - `get_recording_resource`
@@ -42,6 +45,8 @@ Current tool names from the Zoom MCP server:
 
 Some MCP clients namespace server tools in the UI, for example `zoom-mcp:recordings_list`.
 Treat the raw tool names above as authoritative.
+
+Zoom Docs-specific MCP work should use the dedicated `zoom-docs-mcp` server.
 
 Whiteboard-specific MCP work is covered by the dedicated skill
 [whiteboard/SKILL.md](whiteboard/SKILL.md).
@@ -58,7 +63,7 @@ export ZOOM_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"
 
 **3. Verify discovery:**
 - Confirm the client can see `recordings_list`, `search_meetings`, `get_meeting_assets`,
-  `get_recording_resource`, and `create_new_file_with_markdown`.
+  and `get_recording_resource`.
 - If the client exposes raw protocol inspection, `tools/list` is the authoritative discovery source.
 - The current catalog is documented in [references/tools.md](references/tools.md).
 
@@ -73,25 +78,26 @@ recordings_list
 
 ## Critical Notes
 
-**1. User OAuth is the recommended execution path**
+**1. User OAuth is the documented execution path**
 
-A Server-to-Server OAuth token can:
-- initialize against the MCP gateway
-- complete `tools/list`
-- open SSE sessions
-
-Use a **General app** with **user-level OAuth** as the default execution path for Zoom MCP
-tool use unless you have already validated S2S scope coverage and tool execution for your app.
+Use a **General app** with **user-level OAuth** as the execution path for Zoom MCP
+tool use in this plugin. Do not rely on Server-to-Server OAuth as a supported MCP auth model here.
 
 **2. Zoom MCP uses MCP-specific granular scopes**
 
 The Zoom MCP scope set is not the same as the older broad REST scopes.
-The key scopes for this surface are:
+The key scopes for the main Zoom MCP server are:
+- `ai_companion:read:search` — Search across Zoom Meeting, Zoom Chat, and Zoom Doc, returning the most relevant results based on the query
 - `meeting:read:search` — Search and view meetings
 - `meeting:read:assets` — View a meeting's assets
 - `cloud_recording:read:list_user_recordings` — Lists all cloud recordings for a user.
 - `cloud_recording:read:content` — read recording content scope
-- `docs:write:import` — Create new file by import
+- `docs:write:import` — Create a new file by import
+- `docs:read:export` — Read file content in Markdown format
+
+For Zoom Docs MCP specifically, the official docs page shows these granular scopes for the documented tools:
+- `docs:write:import` — Create a new file by import
+- `docs:read:export` — Read file content in Markdown format
 
 **3. AI Companion features are feature prerequisites, not scope substitutes**
 
@@ -117,6 +123,13 @@ route to [../rest-api/SKILL.md](../rest-api/SKILL.md).
 | Streamable HTTP (recommended) | `https://mcp-us.zoom.us/mcp/zoom/streamable` |
 | SSE (fallback) | `https://mcp-us.zoom.us/mcp/zoom/sse` |
 
+Dedicated Docs MCP server:
+
+| Transport | URL |
+|-----------|-----|
+| Streamable HTTP (recommended) | `https://mcp.zoom.us/mcp/docs/streamable` |
+| SSE (fallback) | `https://mcp.zoom.us/mcp/docs/sse` |
+
 Dedicated Whiteboard MCP skill:
 - [whiteboard/SKILL.md](whiteboard/SKILL.md)
 
@@ -137,7 +150,6 @@ workflow.
 
 | Tool | Key Parameters | Required Scope |
 |------|---------------|----------------|
-| `create_new_file_with_markdown` | `content`*, `file_name`, `parent_id` | `docs:write:import` |
 | `get_meeting_assets` | `meetingId`* | `meeting:read:assets` |
 | `search_meetings` | `q`, `from`, `to`, `page_size`, `next_page_token` | `meeting:read:search` |
 | `get_recording_resource` | `meetingId`*, `types`, `clip_num`, `play_time`, `raw_passcode`, `encode_passcode` | `cloud_recording:read:content` |
@@ -169,12 +181,11 @@ recordings_list
 → get_recording_resource  meetingId: "MEETING_UUID_OR_RECORDING_ID"
 ```
 
-**Create a Zoom Doc from Markdown:**
-```text
-create_new_file_with_markdown
-  file_name: "Q4 Planning Notes"
-  content: "# Decisions\n\n- ..."
-```
+**Create or fetch a Zoom Doc:**
+- use the dedicated `zoom-docs-mcp` server rather than the main `zoom-mcp` server
+- official documented tools on the Zoom Docs MCP page are:
+  - `create_file_with_content`
+  - `get_file_content`
 
 ## Error Reference
 

@@ -9,7 +9,8 @@ This plugin works in two modes:
 
 | Connector | Endpoint | Use For |
 |---|---|---|
-| `zoom-mcp` | `https://mcp-us.zoom.us/mcp/zoom/streamable` | Zoom-hosted MCP workflows for meetings, recordings, summaries, and Zoom Docs |
+| `zoom-mcp` | `https://mcp-us.zoom.us/mcp/zoom/streamable` | Zoom-hosted MCP workflows for meetings, recordings, summaries, and meeting assets |
+| `zoom-docs-mcp` | `https://mcp.zoom.us/mcp/docs/streamable` | Zoom Docs creation, retrieval, and Markdown-based document workflows |
 | `zoom-whiteboard-mcp` | `https://mcp-us.zoom.us/mcp/whiteboard/streamable` | Whiteboard-specific MCP workflows |
 
 ## Authentication
@@ -18,13 +19,15 @@ The bundled MCP definitions expect bearer tokens in these environment variables:
 
 ```bash
 export ZOOM_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"
+export ZOOM_DOCS_MCP_ACCESS_TOKEN="your_zoom_docs_mcp_access_token"
 export ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"
 ```
 
 - `ZOOM_MCP_ACCESS_TOKEN` is used for the main Zoom MCP server.
+- `ZOOM_DOCS_MCP_ACCESS_TOKEN` is used for the Zoom Docs MCP server.
 - `ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN` is used for the Whiteboard MCP server.
-- If one user OAuth token includes both scope sets, both variables can use the same value.
-- After setting or rotating either token, restart Claude Code or re-enable the plugin so the MCP servers restart with the new environment.
+- If one OAuth token includes both the main Zoom MCP scopes and the Zoom Docs MCP scopes, both variables can use the same value.
+- After setting or rotating any of these tokens, restart Claude Code or re-enable the plugin so the MCP servers restart with the new environment.
 
 ## What You Can Do Without Connectors
 

@@ -48,24 +48,19 @@ those operations exist on the current Zoom MCP surface.
 ## Authentication Model
 
 User OAuth is the primary documented path.
-
-S2S tokens can:
-- initialize against the MCP gateway
-- complete `tools/list`
-- open SSE sessions
-
-Treat S2S as transport/discovery-capable unless tool execution has been separately validated
-for your app and scopes.
+Use user OAuth as the expected auth model for the bundled Zoom MCP servers in this plugin.
 
 ## Protected Resource Metadata
 
 The hosted MCP surfaces advertise supported scopes through OAuth protected-resource metadata.
 Zoom MCP protected-resource metadata currently exposes:
-- `docs:write:import`
+- `ai_companion:read:search`
 - `meeting:read:assets`
 - `meeting:read:search`
 - `cloud_recording:read:content`
 - `cloud_recording:read:list_user_recordings`
+- `docs:write:import`
+- `docs:read:export`
 
 Whiteboard MCP protected-resource metadata currently exposes:
 - `whiteboard:write:whiteboard`

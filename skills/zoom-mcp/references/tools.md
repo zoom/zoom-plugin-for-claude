@@ -1,19 +1,20 @@
-# Tool Reference — Zoom MCP Server
+# Tool Reference — Zoom MCP Servers
 
-Tools available on the Zoom MCP server. Treat the raw server tool names as authoritative.
-Some MCP clients namespace them in the UI, for example `zoom-mcp:recordings_list`.
+Tools available on the bundled Zoom MCP servers. Treat the raw server tool names as authoritative.
+Some MCP clients namespace them in the UI, for example `zoom-mcp:recordings_list` or
+`zoom-docs-mcp:create_file_with_content`.
 
-This reference is based on the current `tools/list` output and tool execution behavior of
-`https://mcp-us.zoom.us/mcp/zoom/streamable`.
+This reference is based on the current documented and observed tool surfaces of:
+- `https://mcp-us.zoom.us/mcp/zoom/streamable`
+- `https://mcp.zoom.us/mcp/docs/streamable`
 
 Treat the live MCP protocol `tools/list` response as the authoritative source for the current
 tool list and schemas.
 
-## Current Live Tools
+## Main Zoom MCP Server Tools
 
-The current `tools/list` response exposes these Zoom MCP tools:
+The main Zoom MCP server exposes these tools:
 
-- `create_new_file_with_markdown`
 - `get_meeting_assets`
 - `search_meetings`
 - `get_recording_resource`
@@ -25,16 +26,23 @@ The server did **not** expose older inferred tool names such as `list_meetings`,
 
 ## Supported Scope Families Advertised by Zoom MCP
 
-Protected-resource metadata for Zoom MCP advertised these scope families:
-- `docs:write:import`
+Protected-resource metadata for the main Zoom MCP server advertised these scope families:
+- `ai_companion:read:search`
 - `meeting:read:assets`
 - `meeting:read:search`
 - `cloud_recording:read:content`
 - `cloud_recording:read:list_user_recordings`
+- `docs:write:import`
+- `docs:read:export`
 
-## Documents
+## Zoom Docs MCP Server Tools
 
-### `create_new_file_with_markdown`
+The dedicated Zoom Docs MCP server exposes these documented tools:
+
+- `create_file_with_content`
+- `get_file_content`
+
+### `create_file_with_content`
 
 Create a Zoom Docs document from Markdown content.
 
@@ -49,6 +57,16 @@ Create a Zoom Docs document from Markdown content.
 Successful calls return:
 - `file_id`
 - `file_link`
+
+### `get_file_content`
+
+Retrieve a Zoom Docs document in Markdown format.
+
+**Verified scope:** `docs:read:export`
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `fileId` | string | **Yes** | The unique identifier of the document file |
 
 ## Meeting Discovery and Assets
 
@@ -128,3 +146,4 @@ summary-like, and playback-oriented resources.
 - Discovery happens through MCP protocol `tools/list`, not through a dedicated Zoom utility tool.
 - Re-run `tools/list` whenever you need to confirm whether the current tool list has changed.
 - Do not rely on older examples that use `query`, `startDate`, `endDate`, or `pageSize`; the current live schema uses `q`, `from`, `to`, and `page_size`.
+- Do not rely on older examples that route Docs creation through the main `zoom-mcp` server; Zoom Docs now have a dedicated `zoom-docs-mcp` server in this plugin.

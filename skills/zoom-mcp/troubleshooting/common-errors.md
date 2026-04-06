@@ -40,9 +40,13 @@ for the tool you called.
 
 **Server-required scope:** `cloud_recording:read:content`
 
-### `create_new_file_with_markdown` fails on scope
+### `create_file_with_content` fails on scope
 
 **Required scope:** `docs:write:import`
+
+### `get_file_content` fails on scope
+
+**Required scope:** `docs:read:export`
 
 ## Search and Retrieval Issues
 
@@ -89,9 +93,11 @@ sent to the wrong MCP surface.
 
 **Fix:**
 - Zoom MCP: `https://mcp-us.zoom.us/mcp/zoom/streamable`
+- Zoom Docs MCP: `https://mcp.zoom.us/mcp/docs/streamable`
 - Whiteboard MCP: `https://mcp-us.zoom.us/mcp/whiteboard/streamable`
 - re-run `tools/list`
 - use the current tool names exposed by that server
+- if the request is Zoom Docs-specific, use the dedicated Docs MCP server
 - if the request is Whiteboard-specific, route to [../whiteboard/SKILL.md](../whiteboard/SKILL.md)
 
 ### MCP server not appearing in the client
@@ -116,7 +122,7 @@ required arguments.
 ### Upstream `400 invalid param`
 
 **Cause:** The MCP tool reached the downstream Zoom API, but one of the passed arguments was
-invalid. One observed case was calling `create_new_file_with_markdown` with a
+invalid. One observed case was calling `create_file_with_content` with a
 bogus `parent_id`.
 
 **Fix:**

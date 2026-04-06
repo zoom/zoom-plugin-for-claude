@@ -20,7 +20,8 @@ behind a tool call.
 | `get_meeting_assets` | `meeting:read:assets` or `meeting:read:assets:admin` |
 | `recordings_list` | `cloud_recording:read:list_user_recordings` or admin/master variants |
 | `get_recording_resource` | `cloud_recording:read:content` |
-| `create_new_file_with_markdown` | `docs:write:import` worked with user OAuth; S2S runtime error surfaced `docs_import:write` aliasing |
+| `create_file_with_content` | `docs:write:import` worked with user OAuth; S2S runtime error surfaced `docs_import:write` aliasing |
+| `get_file_content` | `docs:read:export` |
 
 ## Recording and Transcript Failures
 
@@ -39,11 +40,12 @@ Common downstream validation response:
 
 | Tool | Error shape | Cause | Fix |
 |------|-------------|-------|-----|
-| `create_new_file_with_markdown` | `Upstream API returned error status code: 400 ... "message":"invalid param"` | Invalid parameter value such as a bogus `parent_id` | Fix the argument value and retry |
+| `create_file_with_content` | `Upstream API returned error status code: 400 ... "message":"invalid param"` | Invalid parameter value such as a bogus `parent_id` | Fix the argument value and retry |
 
 ## Whiteboard Server Split
 
-The Zoom MCP server (`mcp-us.zoom.us/mcp/zoom/streamable`) and the Whiteboard MCP server
+The Zoom MCP server (`mcp-us.zoom.us/mcp/zoom/streamable`), the Zoom Docs MCP server
+(`mcp.zoom.us/mcp/docs/streamable`), and the Whiteboard MCP server
 (`mcp-us.zoom.us/mcp/whiteboard/streamable`) are separate surfaces.
 
 Use the dedicated Whiteboard MCP skill for Whiteboard-specific auth, scopes, and identifier mapping:
