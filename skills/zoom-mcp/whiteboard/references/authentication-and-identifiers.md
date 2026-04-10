@@ -5,36 +5,20 @@ Guidance for `https://mcp.zoom.us/mcp/whiteboard/streamable` and
 
 ## Authentication Behavior
 
-### User OAuth
+Use user-level OAuth for Whiteboard MCP and request the scopes required by the specific tools you need.
 
-User OAuth with Whiteboard scopes was the verified working path for:
-
-- `list_whiteboards`
-- `get_a_whiteboard`
-
-The required user OAuth scope set includes:
-- `whiteboard:read:list_whiteboards`
-- `whiteboard:read:whiteboard`
-
-### Server-to-Server OAuth
-
-S2S OAuth can reach the Whiteboard MCP gateway and complete protocol discovery through
-`tools/list`, but Whiteboard read-tool execution must be validated separately for your app.
-
-One possible runtime error shape when S2S lacks the expected scopes is:
-
-```text
-Invalid access token, does not contain scopes:[whiteboard:read:admin,whiteboard:read]
-```
-
-Protected-resource metadata for Whiteboard MCP advertised these supported scopes:
-- `whiteboard:write:whiteboard`
-- `whiteboard:read:list_whiteboards`
-- `whiteboard:read:whiteboard`
-
-Practical guidance:
-- Use user OAuth first for Whiteboard MCP.
-- Only rely on S2S after you have confirmed the app can mint and execute with the required Whiteboard scopes.
+Tool-to-scope mapping:
+- `add_a_whiteboard_collaborator` → `whiteboard:write:collaborator:admin`
+- `create_a_whiteboard` → `whiteboard:write:whiteboard`
+- `create_a_whiteboard_by_script` → `whiteboard:write:whiteboard`
+- `create_a_whiteboard_for_brainstorming` → `whiteboard:write:whiteboard`
+- `create_a_whiteboard_for_meeting_summary` → `whiteboard:write:whiteboard`
+- `create_a_whiteboard_for_strategy_analysis` → `whiteboard:write:whiteboard`
+- `delete_a_whiteboard_collaborator` → `whiteboard:delete:collaborator:admin`
+- `get_a_whiteboard` → `whiteboard:read:whiteboard:admin`
+- `get_a_whiteboard_collaborator` → `whiteboard:read:list_collaborators:admin`
+- `list_whiteboards` → `whiteboard:read:list_whiteboards:admin`
+- `update_a_whiteboard_collaborator` → `whiteboard:update:collaborator:admin`
 
 ## Whiteboard ID Mapping
 

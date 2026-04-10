@@ -36,7 +36,35 @@ Plan a Zoom MCP workflow and decide when to use MCP alone versus a hybrid REST A
 
 - **Claude Cowork**: use the published Zoom connector and complete OAuth in Claude's connector flow.
 - **Claude Code**: manually complete Zoom user-level OAuth, export `ZOOM_MCP_ACCESS_TOKEN`, reconnect the plugin, then continue with this skill.
-- For the main Zoom MCP server, use the 7 scopes documented in [../zoom-mcp/concepts/oauth-setup.md](../zoom-mcp/concepts/oauth-setup.md). Other Zoom MCP servers have different scope requirements.
+- Scope requirements differ by MCP server. Use the server-specific scope sets below and the detailed tables in [../zoom-mcp/concepts/oauth-setup.md](../zoom-mcp/concepts/oauth-setup.md).
+
+## Server-Specific Scope Sets
+
+Main Zoom MCP server: `https://mcp.zoom.us/mcp/zoom/streamable`
+- `ai_companion:read:search`
+- `meeting:read:search`
+- `meeting:read:assets`
+- `cloud_recording:read:list_user_recordings`
+- `cloud_recording:read:content`
+- `docs:write:import`
+- `docs:read:export`
+
+Zoom Docs MCP server: `https://mcp.zoom.us/mcp/docs/streamable`
+- `create_file_with_content` → `docs:write:import`
+- `get_file_content` → `docs:read:export`
+
+Zoom Whiteboard MCP server: `https://mcp.zoom.us/mcp/whiteboard/streamable`
+- `add_a_whiteboard_collaborator` → `whiteboard:write:collaborator:admin`
+- `create_a_whiteboard` → `whiteboard:write:whiteboard`
+- `create_a_whiteboard_by_script` → `whiteboard:write:whiteboard`
+- `create_a_whiteboard_for_brainstorming` → `whiteboard:write:whiteboard`
+- `create_a_whiteboard_for_meeting_summary` → `whiteboard:write:whiteboard`
+- `create_a_whiteboard_for_strategy_analysis` → `whiteboard:write:whiteboard`
+- `delete_a_whiteboard_collaborator` → `whiteboard:delete:collaborator:admin`
+- `get_a_whiteboard` → `whiteboard:read:whiteboard:admin`
+- `get_a_whiteboard_collaborator` → `whiteboard:read:list_collaborators:admin`
+- `list_whiteboards` → `whiteboard:read:list_whiteboards:admin`
+- `update_a_whiteboard_collaborator` → `whiteboard:update:collaborator:admin`
 
 ## Related Skills
 

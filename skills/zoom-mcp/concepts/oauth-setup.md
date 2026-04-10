@@ -92,6 +92,8 @@ Practical recommendation:
 
 Add the MCP-specific granular scopes required by the tools you want to use.
 
+### Main Zoom MCP server
+
 | Product Area | Scope | Zoom label | Needed for |
 |--------------|-------|------------|------------|
 | AI Companion | `ai_companion:read:search` | Search across Zoom Meeting, Zoom Chat, and Zoom Doc, returning the most relevant results based on the query. | semantic MCP search |
@@ -113,6 +115,33 @@ For the dedicated Zoom Docs MCP connector:
 - add `docs:write:import` if you want Docs creation
 - add `docs:read:export` if you want Docs retrieval
 - export the resulting token as `ZOOM_DOCS_MCP_ACCESS_TOKEN`
+
+### Dedicated Zoom Docs MCP server
+
+For `https://mcp.zoom.us/mcp/docs/streamable`:
+
+| Tool | Required scope |
+|------|----------------|
+| `create_file_with_content` | `docs:write:import` |
+| `get_file_content` | `docs:read:export` |
+
+### Dedicated Zoom Whiteboard MCP server
+
+For `https://mcp.zoom.us/mcp/whiteboard/streamable`:
+
+| Tool | Required scope |
+|------|----------------|
+| `add_a_whiteboard_collaborator` | `whiteboard:write:collaborator:admin` |
+| `create_a_whiteboard` | `whiteboard:write:whiteboard` |
+| `create_a_whiteboard_by_script` | `whiteboard:write:whiteboard` |
+| `create_a_whiteboard_for_brainstorming` | `whiteboard:write:whiteboard` |
+| `create_a_whiteboard_for_meeting_summary` | `whiteboard:write:whiteboard` |
+| `create_a_whiteboard_for_strategy_analysis` | `whiteboard:write:whiteboard` |
+| `delete_a_whiteboard_collaborator` | `whiteboard:delete:collaborator:admin` |
+| `get_a_whiteboard` | `whiteboard:read:whiteboard:admin` |
+| `get_a_whiteboard_collaborator` | `whiteboard:read:list_collaborators:admin` |
+| `list_whiteboards` | `whiteboard:read:list_whiteboards:admin` |
+| `update_a_whiteboard_collaborator` | `whiteboard:update:collaborator:admin` |
 
 Whiteboard MCP uses a separate scope set. See [../whiteboard/SKILL.md](../whiteboard/SKILL.md).
 
@@ -166,6 +195,7 @@ Export the token environment variable used by this plugin:
 ```bash
 export ZOOM_MCP_ACCESS_TOKEN="YOUR_ACCESS_TOKEN"
 export ZOOM_DOCS_MCP_ACCESS_TOKEN="YOUR_DOCS_ACCESS_TOKEN"
+export ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN="YOUR_WHITEBOARD_ACCESS_TOKEN"
 ```
 
 Verification:

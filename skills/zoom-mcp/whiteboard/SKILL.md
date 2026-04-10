@@ -29,24 +29,25 @@ Dedicated guidance for Zoom's Whiteboard MCP server.
 
 ## Authentication
 
-- **User OAuth with Whiteboard scopes** is the verified working path for `list_whiteboards`
-  and `get_a_whiteboard`.
-- **S2S OAuth** can reach the Whiteboard MCP gateway and complete `tools/list`, but tool
-  execution must be validated separately for your app and Whiteboard scopes.
-- Practical rule: start with **user OAuth** for Whiteboard MCP unless you have already
-  proven your S2S app can mint and execute with the required Whiteboard scopes.
+- **User OAuth with Whiteboard scopes** is the documented path for Whiteboard MCP execution.
 - The bundled connector expects the token in `ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN`.
 
 Reference: [references/authentication-and-identifiers.md](references/authentication-and-identifiers.md)
 
 ## Required Scopes
 
-Whiteboard MCP read scopes:
-- `whiteboard:read:list_whiteboards`
-- `whiteboard:read:whiteboard`
-
-Write-capable Whiteboard metadata advertised by the gateway:
-- `whiteboard:write:whiteboard`
+Whiteboard MCP tool scopes:
+- `add_a_whiteboard_collaborator` → `whiteboard:write:collaborator:admin`
+- `create_a_whiteboard` → `whiteboard:write:whiteboard`
+- `create_a_whiteboard_by_script` → `whiteboard:write:whiteboard`
+- `create_a_whiteboard_for_brainstorming` → `whiteboard:write:whiteboard`
+- `create_a_whiteboard_for_meeting_summary` → `whiteboard:write:whiteboard`
+- `create_a_whiteboard_for_strategy_analysis` → `whiteboard:write:whiteboard`
+- `delete_a_whiteboard_collaborator` → `whiteboard:delete:collaborator:admin`
+- `get_a_whiteboard` → `whiteboard:read:whiteboard:admin`
+- `get_a_whiteboard_collaborator` → `whiteboard:read:list_collaborators:admin`
+- `list_whiteboards` → `whiteboard:read:list_whiteboards:admin`
+- `update_a_whiteboard_collaborator` → `whiteboard:update:collaborator:admin`
 
 ## Whiteboard ID Mapping
 
@@ -65,12 +66,15 @@ https://us05whiteboard.zoom.us/wb/db/6iktP8hJT3e5qaCuwFuAGg/p/180968285929472
 
 The current Whiteboard MCP tool surface is:
 
+- `add_a_whiteboard_collaborator`
 - `create_a_whiteboard_for_brainstorming`
 - `list_whiteboards`
 - `create_a_whiteboard`
 - `get_a_whiteboard`
+- `get_a_whiteboard_collaborator`
 - `create_a_whiteboard_by_script`
-- `update_a_whiteboard_metadata`
+- `update_a_whiteboard_collaborator`
+- `delete_a_whiteboard_collaborator`
 - `create_a_whiteboard_for_meeting_summary`
 - `create_a_whiteboard_for_strategy_analysis`
 
