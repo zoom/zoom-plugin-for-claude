@@ -53,21 +53,28 @@ Whiteboard-specific MCP work is covered by the dedicated skill
 
 ## Quick Start
 
-**1. Export the token expected by the bundled connector:**
+**1. Use the right auth path for your Claude product**
+
+- **Claude Cowork**: use the published Zoom connector in Claude's connector directory and complete OAuth there.
+- **Claude Code**: do not use the built-in `Authenticate` button for this server; complete Zoom user-level OAuth yourself and provide the token through `ZOOM_MCP_ACCESS_TOKEN`.
+
+**2. Export the token expected by the bundled connector:**
 
 ```bash
 export ZOOM_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"
 ```
 
-**2. Enable or restart the plugin so Claude restarts the bundled MCP server definition.**
+**3. Enable or restart the plugin so Claude restarts the bundled MCP server definition.**
 
-**3. Verify discovery:**
+**4. Verify discovery:**
 - Confirm the client can see `recordings_list`, `search_meetings`, `get_meeting_assets`,
   and `get_recording_resource`.
 - If the client exposes raw protocol inspection, `tools/list` is the authoritative discovery source.
 - The current catalog is documented in [references/tools.md](references/tools.md).
 
-**4. Run the first useful call:**
+**5. In Claude Code, use `/setup-zoom-mcp` to continue the setup and workflow design.**
+
+**6. Run the first useful call:**
 ```text
 recordings_list
   userId: "me"
@@ -86,7 +93,7 @@ tool use in this plugin. Do not rely on Server-to-Server OAuth as a supported MC
 **2. Zoom MCP uses MCP-specific granular scopes**
 
 The Zoom MCP scope set is not the same as the older broad REST scopes.
-The key scopes for the main Zoom MCP server are:
+The key scopes for the main Zoom MCP server at `https://mcp-us.zoom.us/mcp/zoom/streamable` are:
 - `ai_companion:read:search` — Search across Zoom Meeting, Zoom Chat, and Zoom Doc, returning the most relevant results based on the query
 - `meeting:read:search` — Search and view meetings
 - `meeting:read:assets` — View a meeting's assets
@@ -98,6 +105,8 @@ The key scopes for the main Zoom MCP server are:
 For Zoom Docs MCP specifically, the official docs page shows these granular scopes for the documented tools:
 - `docs:write:import` — Create a new file by import
 - `docs:read:export` — Read file content in Markdown format
+
+Other Zoom MCP servers use different scope sets. Use the published Zoom MCP server docs as the source of truth for those surfaces.
 
 **3. AI Companion features are feature prerequisites, not scope substitutes**
 

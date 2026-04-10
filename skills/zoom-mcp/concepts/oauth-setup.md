@@ -6,6 +6,11 @@ The documented path for Zoom MCP is a **General app** using **user-level OAuth**
 Each user authorizes with their own Zoom account, and the resulting bearer token is passed by
 the bundled connector in [`.mcp.json`](../../../.mcp.json).
 
+Authentication path depends on the Claude product:
+
+- **Claude Cowork**: use the published Zoom connector in Claude's connector directory and complete OAuth there.
+- **Claude Code**: manually complete Zoom user-level OAuth, export `ZOOM_MCP_ACCESS_TOKEN`, reconnect the plugin, then use [`/setup-zoom-mcp`](../../setup-zoom-mcp/SKILL.md).
+
 ## Step 1: Create a General App with User-Level OAuth
 
 1. Go to [marketplace.zoom.us](https://marketplace.zoom.us) → **Develop** → **Build App**.
@@ -97,6 +102,8 @@ Add the MCP-specific granular scopes required by the tools you want to use.
 | Zoom Docs | `docs:write:import` | Create new file by import | `create_file_with_content` |
 | Zoom Docs | `docs:read:export` | Read file content in Markdown format | `get_file_content` |
 
+For the main Zoom MCP server at `https://mcp-us.zoom.us/mcp/zoom/streamable`, the current published scope set is the 7 scopes listed above.
+
 Minimum recommendation for the main Zoom MCP connector:
 - use a General app
 - use user-level OAuth
@@ -108,6 +115,9 @@ For the dedicated Zoom Docs MCP connector:
 - export the resulting token as `ZOOM_DOCS_MCP_ACCESS_TOKEN`
 
 Whiteboard MCP uses a separate scope set. See [../whiteboard/SKILL.md](../whiteboard/SKILL.md).
+
+The other Zoom MCP servers have different scope requirements based on the published Zoom docs:
+- https://developers.zoom.us/docs/mcp/servers/connect-to-zoom-mcp-servers/
 
 ## Step 3: Authorize and Exchange for Tokens
 
@@ -160,6 +170,7 @@ export ZOOM_DOCS_MCP_ACCESS_TOKEN="YOUR_DOCS_ACCESS_TOKEN"
 
 Verification:
 - restart Claude Code or re-enable the plugin so the bundled MCP server restarts with the token
+- in Claude Code, use [`/setup-zoom-mcp`](../../setup-zoom-mcp/SKILL.md) after exporting the token
 - confirm the client can see `recordings_list`, `search_meetings`, `get_meeting_assets`,
   and `get_recording_resource`
 - for the dedicated Docs server, confirm the client can see `create_file_with_content`

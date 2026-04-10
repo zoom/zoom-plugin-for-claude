@@ -21,7 +21,7 @@ Plan a Zoom MCP workflow and decide when to use MCP alone versus a hybrid REST A
 1. Determine whether the goal is deterministic automation, AI tool orchestration, or a hybrid.
 2. If MCP is appropriate, identify the likely Zoom MCP surface and transport assumptions.
 3. If MCP alone is not enough, define the REST API responsibilities separately.
-4. Call out auth, scope, and client capability constraints.
+4. Call out auth, scope, and client capability constraints, especially the difference between Claude Cowork and Claude Code auth paths.
 5. End with a minimal proof-of-concept sequence.
 
 ## Output
@@ -31,6 +31,12 @@ Plan a Zoom MCP workflow and decide when to use MCP alone versus a hybrid REST A
 - Hybrid boundaries if REST is also required
 - Risks and setup notes
 - Relevant skill links
+
+## Auth Rules
+
+- **Claude Cowork**: use the published Zoom connector and complete OAuth in Claude's connector flow.
+- **Claude Code**: manually complete Zoom user-level OAuth, export `ZOOM_MCP_ACCESS_TOKEN`, reconnect the plugin, then continue with this skill.
+- For the main Zoom MCP server, use the 7 scopes documented in [../zoom-mcp/concepts/oauth-setup.md](../zoom-mcp/concepts/oauth-setup.md). Other Zoom MCP servers have different scope requirements.
 
 ## Related Skills
 

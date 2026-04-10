@@ -6,7 +6,12 @@ A Claude plugin for planning, building, and debugging Zoom integrations. It help
 
 Install this directory as a local Claude plugin. The plugin manifest is at [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) and the bundled Zoom MCP connectors are defined in [`.mcp.json`](.mcp.json).
 
-Before using the bundled MCP servers, export bearer tokens for the Zoom surfaces you want Claude to use:
+Authentication path depends on the Claude product:
+
+- **Claude Cowork**: use the published Zoom connector in Claude's connector directory and complete OAuth there.
+- **Claude Code**: complete Zoom user-level OAuth yourself, export bearer tokens for the Zoom surfaces you want Claude to use, then reconnect the plugin and use `/setup-zoom-mcp`.
+
+For Claude Code, export the bearer tokens before using the bundled MCP servers:
 
 ```bash
 export ZOOM_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"

@@ -23,6 +23,8 @@ export ZOOM_DOCS_MCP_ACCESS_TOKEN="your_zoom_docs_mcp_access_token"
 export ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN="your_zoom_user_oauth_access_token"
 ```
 
+- **Claude Cowork**: use the published Zoom connector in Claude's connector directory and complete OAuth in the connector flow.
+- **Claude Code**: do not rely on the built-in `Authenticate` button for `zoom-mcp`; complete Zoom user-level OAuth yourself, export the token, reconnect the plugin, then use [`/setup-zoom-mcp`](./skills/setup-zoom-mcp/SKILL.md).
 - `ZOOM_MCP_ACCESS_TOKEN` is used for the main Zoom MCP server.
 - `ZOOM_DOCS_MCP_ACCESS_TOKEN` is used for the Zoom Docs MCP server.
 - `ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN` is used for the Whiteboard MCP server.
