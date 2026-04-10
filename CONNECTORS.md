@@ -9,9 +9,9 @@ This plugin works in two modes:
 
 | Connector | Endpoint | Use For |
 |---|---|---|
-| `zoom-mcp` | `https://mcp-us.zoom.us/mcp/zoom/streamable` | Zoom-hosted MCP workflows for meetings, recordings, summaries, and meeting assets |
+| `zoom-mcp` | `https://mcp.zoom.us/mcp/zoom/streamable` | Zoom-hosted MCP workflows for meetings, recordings, summaries, and meeting assets |
 | `zoom-docs-mcp` | `https://mcp.zoom.us/mcp/docs/streamable` | Zoom Docs creation, retrieval, and Markdown-based document workflows |
-| `zoom-whiteboard-mcp` | `https://mcp-us.zoom.us/mcp/whiteboard/streamable` | Whiteboard-specific MCP workflows |
+| `zoom-whiteboard-mcp` | `https://mcp.zoom.us/mcp/whiteboard/streamable` | Whiteboard-specific MCP workflows |
 
 ## Authentication
 

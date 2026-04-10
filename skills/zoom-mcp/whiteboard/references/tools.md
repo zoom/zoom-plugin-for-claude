@@ -1,6 +1,6 @@
 # Tools — Whiteboard MCP
 
-Current `tools/list` result from `https://mcp-us.zoom.us/mcp/whiteboard/streamable`.
+Current `tools/list` result from `https://mcp.zoom.us/mcp/whiteboard/streamable`.
 
 ## Tool Catalog
 

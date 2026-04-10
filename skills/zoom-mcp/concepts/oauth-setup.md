@@ -102,7 +102,7 @@ Add the MCP-specific granular scopes required by the tools you want to use.
 | Zoom Docs | `docs:write:import` | Create new file by import | `create_file_with_content` |
 | Zoom Docs | `docs:read:export` | Read file content in Markdown format | `get_file_content` |
 
-For the main Zoom MCP server at `https://mcp-us.zoom.us/mcp/zoom/streamable`, the current published scope set is the 7 scopes listed above.
+For the main Zoom MCP server at `https://mcp.zoom.us/mcp/zoom/streamable`, the current published scope set is the 7 scopes listed above.
 
 Minimum recommendation for the main Zoom MCP connector:
 - use a General app

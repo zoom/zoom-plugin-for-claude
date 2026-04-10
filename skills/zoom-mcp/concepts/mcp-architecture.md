@@ -11,15 +11,15 @@ sources. Zoom exposes hosted MCP surfaces that clients can discover and call ove
 
 | Transport | URL |
 |-----------|-----|
-| Streamable HTTP (recommended) | `https://mcp-us.zoom.us/mcp/zoom/streamable` |
-| SSE (fallback) | `https://mcp-us.zoom.us/mcp/zoom/sse` |
+| Streamable HTTP (recommended) | `https://mcp.zoom.us/mcp/zoom/streamable` |
+| SSE (fallback) | `https://mcp.zoom.us/mcp/zoom/sse` |
 
 ### Whiteboard MCP
 
 | Transport | URL |
 |-----------|-----|
-| Streamable HTTP (recommended) | `https://mcp-us.zoom.us/mcp/whiteboard/streamable` |
-| SSE (fallback) | `https://mcp-us.zoom.us/mcp/whiteboard/sse` |
+| Streamable HTTP (recommended) | `https://mcp.zoom.us/mcp/whiteboard/streamable` |
+| SSE (fallback) | `https://mcp.zoom.us/mcp/whiteboard/sse` |
 
 Whiteboard MCP is covered by the dedicated skill
 [../whiteboard/SKILL.md](../whiteboard/SKILL.md).

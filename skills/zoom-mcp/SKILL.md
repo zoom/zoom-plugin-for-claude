@@ -25,7 +25,7 @@ Guidance for the bundled Zoom MCP connector in this Claude plugin. Prefer `desig
 
 # Zoom MCP Server
 
-This plugin bundles Zoom's hosted MCP server at `mcp-us.zoom.us` for AI-agent access to:
+This plugin bundles Zoom's hosted MCP server at `mcp.zoom.us` for AI-agent access to:
 
 - semantic meeting search
 - meeting-linked asset retrieval
@@ -93,7 +93,7 @@ tool use in this plugin. Do not rely on Server-to-Server OAuth as a supported MC
 **2. Zoom MCP uses MCP-specific granular scopes**
 
 The Zoom MCP scope set is not the same as the older broad REST scopes.
-The key scopes for the main Zoom MCP server at `https://mcp-us.zoom.us/mcp/zoom/streamable` are:
+The key scopes for the main Zoom MCP server at `https://mcp.zoom.us/mcp/zoom/streamable` are:
 - `ai_companion:read:search` — Search across Zoom Meeting, Zoom Chat, and Zoom Doc, returning the most relevant results based on the query
 - `meeting:read:search` — Search and view meetings
 - `meeting:read:assets` — View a meeting's assets
@@ -129,8 +129,8 @@ route to [../rest-api/SKILL.md](../rest-api/SKILL.md).
 
 | Transport | URL |
 |-----------|-----|
-| Streamable HTTP (recommended) | `https://mcp-us.zoom.us/mcp/zoom/streamable` |
-| SSE (fallback) | `https://mcp-us.zoom.us/mcp/zoom/sse` |
+| Streamable HTTP (recommended) | `https://mcp.zoom.us/mcp/zoom/streamable` |
+| SSE (fallback) | `https://mcp.zoom.us/mcp/zoom/sse` |
 
 Dedicated Docs MCP server:
 

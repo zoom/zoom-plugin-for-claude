@@ -2,7 +2,7 @@
   "mcpServers": {
     "zoom-mcp": {
       "type": "http",
-      "url": "https://mcp-us.zoom.us/mcp/zoom/streamable",
+      "url": "https://mcp.zoom.us/mcp/zoom/streamable",
       "headers": {
         "Authorization": "Bearer ${ZOOM_MCP_ACCESS_TOKEN}"
       }
@@ -16,7 +16,7 @@
     },
     "zoom-whiteboard-mcp": {
       "type": "http",
-      "url": "https://mcp-us.zoom.us/mcp/whiteboard/streamable",
+      "url": "https://mcp.zoom.us/mcp/whiteboard/streamable",
       "headers": {
         "Authorization": "Bearer ${ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN}"
       }

@@ -44,9 +44,9 @@ Common downstream validation response:
 
 ## Whiteboard Server Split
 
-The Zoom MCP server (`mcp-us.zoom.us/mcp/zoom/streamable`), the Zoom Docs MCP server
+The Zoom MCP server (`mcp.zoom.us/mcp/zoom/streamable`), the Zoom Docs MCP server
 (`mcp.zoom.us/mcp/docs/streamable`), and the Whiteboard MCP server
-(`mcp-us.zoom.us/mcp/whiteboard/streamable`) are separate surfaces.
+(`mcp.zoom.us/mcp/whiteboard/streamable`) are separate surfaces.
 
 Use the dedicated Whiteboard MCP skill for Whiteboard-specific auth, scopes, and identifier mapping:
 - [../whiteboard/SKILL.md](../whiteboard/SKILL.md)

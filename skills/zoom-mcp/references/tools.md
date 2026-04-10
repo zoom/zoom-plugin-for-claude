@@ -5,7 +5,7 @@ Some MCP clients namespace them in the UI, for example `zoom-mcp:recordings_list
 `zoom-docs-mcp:create_file_with_content`.
 
 This reference is based on the current documented and observed tool surfaces of:
-- `https://mcp-us.zoom.us/mcp/zoom/streamable`
+- `https://mcp.zoom.us/mcp/zoom/streamable`
 - `https://mcp.zoom.us/mcp/docs/streamable`
 
 Treat the live MCP protocol `tools/list` response as the authoritative source for the current

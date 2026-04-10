@@ -92,9 +92,9 @@ Returned resource URLs still require the bearer token.
 sent to the wrong MCP surface.
 
 **Fix:**
-- Zoom MCP: `https://mcp-us.zoom.us/mcp/zoom/streamable`
+- Zoom MCP: `https://mcp.zoom.us/mcp/zoom/streamable`
 - Zoom Docs MCP: `https://mcp.zoom.us/mcp/docs/streamable`
-- Whiteboard MCP: `https://mcp-us.zoom.us/mcp/whiteboard/streamable`
+- Whiteboard MCP: `https://mcp.zoom.us/mcp/whiteboard/streamable`
 - re-run `tools/list`
 - use the current tool names exposed by that server
 - if the request is Zoom Docs-specific, use the dedicated Docs MCP server
